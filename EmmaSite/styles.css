@@ -1,0 +1,164 @@
+/* Custom CSS File for Emma's Mental Health Resources */
+@charset "UTF-8";
+
+
+body {
+	background-image: url("images/background.png");
+	color: white;
+}
+
+nav {
+  background-color: black;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+nav a {
+  margin: 5%;
+  font-size: 14pt;
+  color: lightyellow;
+  text-decoration: none;
+}
+
+nav a:hover {
+  margin: 5%;
+  font-size: 16pt;
+  color: yellow;
+}
+
+header, footer {
+	background-color: skyblue;
+}
+
+footer p {
+	color: black;
+	text-align: center;
+}
+
+footer a {
+	color: black;
+	text-decoration: underline;
+}
+
+footer a:hover {
+	color: yellow;
+	text-decoration: none;
+}
+
+h1 {
+	font-family: 'Architects Daughter', cursive;
+	text-align: center;
+	font-size: 100pt;
+	-webkit-text-fill-color: white;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: black;
+}
+
+h2 {
+	font-family: 'Roboto Slab', serif;
+	margin: 1%;
+	margin-bottom: 10px;
+}
+
+h4 a {
+	color: lightyellow;
+}
+
+h4 a:hover {
+	color: #ffff80;
+	text-decoration: none;
+}
+
+h4 a:visited {
+	color: #a2a28f;
+}
+
+h5 {
+	color: lightyellow;
+	text-align: center;
+}
+
+h6, h6 a, article p a {
+	color: skyblue;
+}
+
+h6 a:hover, #hey a:hover {
+	color: #5397cd;
+	text-decoration: none;
+}
+
+h4, h5, h6, p, a {
+	font-family: 'Montserrat', sans-serif;
+}
+
+hr {
+	background-color: lightyellow;
+}
+
+article {
+	width: 70%;
+	margin-left: 2%;
+	margin-bottom: 2%;
+	padding: 10px;
+	border: 2pt solid lightyellow;
+	border-radius: 20px;
+}
+
+article .btn {
+	color: lightyellow;
+	float: right;
+	font-size: 24pt;
+	padding: 0px;
+	margin-right: 4pt;
+	line-height: 20pt;
+}
+
+article .btn:hover {
+	color: #ffff80;
+}
+
+.btn-block:hover {
+	color: #5397cd;
+}
+
+.gallery {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: space-between;
+	padding-bottom: 10px;
+}
+
+.resource {
+	border-radius: 8px;
+	background-color: #3A3B3C;
+	width: 400px;
+	height: 700px;
+	margin: 0px 20px 20px 0px;
+	color: white;
+	font-family: 'Arvo', serif;
+	position: relative;
+}
+
+.resource div {
+	padding: 10px;
+}
+
+.resource img {
+	width: 400px;
+}
+
+.btn-outline-light {
+	position: absolute;
+	bottom: 10px;
+    left: 10px;
+	font-size: 18px;
+}
+
+.resource h4 {
+	color: lightyellow;
+	border-bottom: 2pt solid lightyellow;
+	border-top: 2pt solid lightyellow;
+	padding-left: 1%;
+	padding-bottom: 5px;
+}
