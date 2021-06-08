@@ -23,11 +23,15 @@ nav a {
 nav a:hover {
   margin: 5%;
   font-size: 16pt;
-  color: yellow;
+  color: #ffff80;
 }
 
-header, footer {
-	background-color: skyblue;
+header {
+	background-image: url("images/titleplate.png");
+}
+
+footer {
+	background-image: url(images/footplate.png);
 }
 
 footer p {
@@ -49,9 +53,9 @@ h1 {
 	font-family: 'Architects Daughter', cursive;
 	text-align: center;
 	font-size: 100pt;
-	-webkit-text-fill-color: white;
+	-webkit-text-fill-color: lightyellow;
 	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: black;
+	-webkit-text-stroke-color: yellow;
 }
 
 h2 {
@@ -70,12 +74,12 @@ h4 a:hover {
 }
 
 h4 a:visited {
-	color: #a2a28f;
+	color: #dcdc80;
 }
 
 h5 {
-	color: lightyellow;
 	text-align: center;
+	color: skyblue;
 }
 
 h6, h6 a, article p a {
@@ -133,7 +137,7 @@ article .btn:hover {
 	border-radius: 8px;
 	background-color: #3A3B3C;
 	width: 400px;
-	height: 700px;
+	height: 725px;
 	margin: 0px 20px 20px 0px;
 	color: white;
 	font-family: 'Arvo', serif;
