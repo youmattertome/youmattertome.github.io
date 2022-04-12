@@ -7,7 +7,7 @@ h1 {
   font-family: 'Architects Daughter', cursive;
   text-align: center;
   text-shadow: 0 0 5px white;
-  font-size: 100pt;
+  font-size: clamp(5.73rem, calc(1.54rem + 0.92vw), 5.2rem);
   -webkit-text-fill-color: lightyellow;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: yellow;
