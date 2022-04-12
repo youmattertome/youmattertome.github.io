@@ -99,6 +99,7 @@ nav a:hover {
 
 header,
 footer {
+  overflow: hidden;
   background: linear-gradient(270deg, #c79fc7, #96abcc, #b9a7cb);
   background-size: 200% 200%;
   -webkit-animation: gradborder 30s ease infinite;
@@ -123,6 +124,7 @@ footer a:hover {
 }
 
 .pagelayout {
+  overflow: hidden;
   max-width: 80rem /* 1280px */;
   width: 100%;
   margin-left: auto;
@@ -311,6 +313,7 @@ article .btn:hover {
 /* Misc CSS Tricks */
 body {
   overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
 }
 
 html {
