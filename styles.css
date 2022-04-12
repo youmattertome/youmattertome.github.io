@@ -1,10 +1,81 @@
 /* Custom CSS File for Emma's Mental Health Resources */
 @charset "UTF-8";
 
+/* Typography */
+
+h1 {
+  font-family: 'Architects Daughter', cursive;
+  text-align: center;
+  text-shadow: 0 0 5px white;
+  font-size: 100pt;
+  -webkit-text-fill-color: lightyellow;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: yellow;
+}
+
+h2 {
+  font-size: clamp(1.73rem, calc(1.54rem + 0.92vw), 2.2rem);
+  font-family: 'Roboto Slab', serif;
+  margin-bottom: 2rem;
+}
+
+h4 {
+  font-size: clamp(1.2rem, calc(1.12rem + 0.4vw), 1.41rem);
+}
+
+h4 a {
+  color: lightyellow;
+}
+
+h4 a:hover {
+  color: #ffff80;
+  text-decoration: none;
+}
+
+h4 a:visited {
+  color: #dcdc80;
+}
+
+h5 {
+  font-size: clamp(1.2rem, calc(1.05rem + 0.21vw), 1.09rem);
+  text-align: center;
+  text-shadow: 0 0 5px black;
+  color: skyblue;
+}
+
+h6,
+h6 a,
+article p a {
+  color: skyblue;
+}
+
+h6 a:hover,
+#hey a:hover {
+  color: #5397cd;
+  text-decoration: none;
+}
+
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  font-size: clamp(1rem, calc(0.95rem + 0.24vw), 1.13rem);
+}
+
+hr {
+  background-color: lightyellow;
+}
+
+/* Page Layout */
 
 body {
-	background-image: url("images/background.png");
-	color: white;
+  background-image: url('images/background.png');
+  color: white;
 }
 
 nav {
@@ -26,150 +97,247 @@ nav a:hover {
   color: #ffff80;
 }
 
-header, footer {
-	background-image: url("images/titleplate.png");
+header,
+footer {
+  background: linear-gradient(270deg, #c79fc7, #96abcc, #b9a7cb);
+  background-size: 200% 200%;
+  -webkit-animation: gradborder 30s ease infinite;
+  -moz-animation: gradborder 30s ease infinite;
+  animation: gradborder 30s ease infinite;
 }
 
 footer p {
-	color: black;
-	text-align: center;
-	margin: 25px;
+  color: black;
+  text-align: center;
+  margin: 25px;
 }
 
 footer a {
-	color: black;
-	text-decoration: underline;
+  color: black;
+  text-decoration: underline;
 }
 
 footer a:hover {
-	color: yellow;
-	text-decoration: none;
+  color: yellow;
+  text-decoration: none;
 }
 
-h1 {
-	font-family: 'Architects Daughter', cursive;
-	text-align: center;
-	text-shadow: 0 0 5px white;
-	font-size: 100pt;
-	-webkit-text-fill-color: lightyellow;
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: yellow;
+.pagelayout {
+  max-width: 80rem /* 1280px */;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem /* 16px */;
+  padding-right: 1rem /* 16px */;
 }
 
-h2 {
-	font-family: 'Roboto Slab', serif;
-	margin: 1%;
-	margin-bottom: 10px;
+@media (min-width: 640px) {
+  .pagelayout {
+    padding-left: 1.5rem /* 24px */;
+    padding-right: 1.5rem /* 24px */;
+  }
 }
 
-h4 a {
-	color: lightyellow;
-}
-
-h4 a:hover {
-	color: #ffff80;
-	text-decoration: none;
-}
-
-h4 a:visited {
-	color: #dcdc80;
-}
-
-h5 {
-	text-align: center;
-	text-shadow: 0 0 5px black;
-	color: skyblue;
-}
-
-h6, h6 a, article p a {
-	color: skyblue;
-}
-
-h6 a:hover, #hey a:hover {
-	color: #5397cd;
-	text-decoration: none;
-}
-
-h4, h5, h6, p, a {
-	font-family: 'Montserrat', sans-serif;
-}
-
-hr {
-	background-color: lightyellow;
+@media (min-width: 1024px) {
+  .page {
+    padding-left: 2rem /* 32px */;
+    padding-right: 2rem /* 32px */;
+  }
 }
 
 article {
-	width: 70%;
-	margin-left: 2%;
-	margin-bottom: 2%;
-	padding: 10px;
-	border: 2pt solid lightyellow;
-	border-radius: 20px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem /* 16px */;
+  padding-right: 1rem /* 16px */;
+  padding-top: 1rem /* 16px */;
+  padding-bottom: 1rem /* 16px */;
+}
+
+.resourceLink {
+  border: 2pt solid lightyellow;
+  border-radius: 20px;
+  padding-top: 1rem /* 16xx */;
+  padding-bottom: 1rem /* 16px */;
+  margin-top: 1rem /* 16px */;
+  margin-bottom: 1rem /* 16px */;
 }
 
 article .btn {
-	color: lightyellow;
-	float: right;
-	font-size: 24pt;
-	padding: 0px;
-	margin-right: 4pt;
-	line-height: 20pt;
+  color: lightyellow;
+  float: right;
+  font-size: 24pt;
+  padding: 0px;
+  margin-right: 4pt;
+  line-height: 20pt;
 }
 
 article .btn:hover {
-	color: #ffff80;
+  color: #ffff80;
 }
 
 .btn-block:hover {
-	color: #5397cd;
+  color: #5397cd;
 }
 
 .gallery {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-content: space-between;
-	padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  padding-bottom: 10px;
+}
+
+@media (min-width: 640px) {
+  .gallery {
+    gap: 1rem;
+  }
+}
+
+#therapist {
+  margin-bottom: 0px;
 }
 
 .resource {
-	border-radius: 8px;
-	background-color: #3A3B3C;
-	width: 400px;
-	height: 725px;
-	margin: 0px 20px 20px 0px;
-	color: white;
-	font-family: 'Arvo', serif;
-	position: relative;
+  border-radius: 8px;
+  background-color: #3a3b3c;
+  padding-bottom: 20px;
+  max-width: 50ch;
+  margin-top: 2rem /* 24px */;
+  margin-bottom: 2rem /* 24px */;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-family: 'Arvo', serif;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-grow: initial;
 }
 
 .resource div {
-	padding: 10px;
+  padding: 10px;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-direction: column;
 }
 
 .resource img {
-	width: 400px;
+  width: 400px;
 }
 
 .btn-outline-light {
-	position: absolute;
-	bottom: 10px;
-    left: 10px;
-	font-size: 18px;
+  font-size: 18px;
+  margin-top: auto;
 }
 
 .btn-dark {
-	color: lightyellow;
+  color: lightyellow;
 }
 
 .btn-dark:hover {
-	color: #ffff80;
+  color: #ffff80;
 }
 
 .resource h4 {
-	color: lightyellow;
-	border-bottom: 2pt solid lightyellow;
-	border-top: 2pt solid lightyellow;
-	padding-left: 1%;
-	padding-bottom: 5px;
+  color: lightyellow;
+  border-bottom: 2pt solid lightyellow;
+  border-top: 2pt solid lightyellow;
+  padding-left: 1%;
+  padding-bottom: 5px;
+}
+
+.gradient-border {
+  --borderWidth: 2px;
+  background: transparent;
+  position: relative;
+  border-radius: var(--borderWidth);
+}
+
+.gradient-border:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 20px;
+  background: linear-gradient(270deg, #c79fc7, #96abcc, #b9a7cb);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  -webkit-animation: gradborder 30s ease infinite;
+  -moz-animation: gradborder 30s ease infinite;
+  animation: gradborder 30s ease infinite;
+}
+
+@-webkit-keyframes gradborder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes gradborder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradborder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Misc CSS Tricks */
+body {
+  overscroll-behavior-y: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Stops images from going outside containers */
+img {
+  max-width: 100%;
+}
+
+/* Avoid overlapping new iOS 15 Safari bottom bar */
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  bottom: env(safe-area-inset-bottom);
+}
+
+/* Avoid Safari clipping bottom bar */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* The hack for Safari */
+    height: -webkit-fill-available;
+  }
 }
