@@ -227,10 +227,6 @@ article .btn:hover {
   flex-direction: column;
 }
 
-.resource img {
-  width: 400px;
-}
-
 .btn-outline-light {
   font-size: 18px;
   margin-top: auto;
