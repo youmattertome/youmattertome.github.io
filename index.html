@@ -1,467 +1,996 @@
 <!doctype html>
 
-<html>
+<!-- Declare the language of the HTML as English and call up the data for Bootstrap's built-in dark mode -->
+<html lang="en" data-bs-thme="dark">
 
 <head>
+	<!--Title, Meta Properties, & Links -->
+	<!-- #region -->
 
+	<!-- Set the page title -->
 	<title>Emma Mei-Li: You Matter</title>
 
+	<!-- Define the character set and other key meta properties for the site -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="color-scheme" content="dark light">
 
-	<!-- Link in Bootstrap CSS -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- Link in Bootstrap 5 CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Link in Bootstrap 5 JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
 
 	<!-- Link in custom CSS sheet -->
 	<link href="styles.css" rel="stylesheet">
 
 	<!-- Link in Google Fonts -->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat&family=Roboto+Slab&display=swap"
-		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat&family=Roboto+Slab&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
 
 	<!-- Link in logo for use as favicon -->
 	<link rel="icon" href="images/logo.png">
+	<!-- endregion -->
 </head>
 
-<body>
 
+
+<!-- Set up Bootstrap scrollspy -->
+<body data-bs-spy="scroll" data-bs-target=".navbar">		
+	<!-- Navbar -->
+	<!-- #region -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" id="site-navbar">
+
+		<!-- Logo (Chadsworth) -->
+		<a class="navbar-brand" href="#">
+      		<img src="images/logo.png" alt="Emma Mei-Li's logo, Chadsworth the Hippo." data-bs-toggle="tooltip" title="Chadsworth the Hippo" style="width: 60px; margin-left: 20px; float: left;"> 
+    	</a>
+
+		<!-- Collapse Button -->
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar" style="margin-right: 10px;">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<!-- Links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav me-auto">
+				
+				<!-- Welcome -->
+				<li class="nav-item ms-4" id="nav-unit-1">
+					<a class="nav-link" href="#welcome">Welcome</a>
+				</li>
+				
+				<!-- Mental Health Hotlines -->
+				<li class="nav-item dropdown ms-4" id="nav-unit-2">
+			      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="navbardrop">Find Support</a>
+			      <ul class="dropdown-menu">
+			        <a class="dropdown-item ms-0" href="#general" style="display: block;">General</a>
+			        <a class="dropdown-item ms-0" href="#lgbtq" style="display: block;">LGBTQ+</a>
+			        <a class="dropdown-item ms-0" href="#vets" style="display: block;">Veterans</a>
+			        <a class="dropdown-item ms-0" href="#substance" style="display: block; margin-left: 0px;">Substance A<span class="bu">bu</span>se</a>
+			        <a class="dropdown-item ms-0" href="#domestic" style="display: block;">Domestic & Sexual V<span class="io">io</span>lence</a>
+			        <a class="dropdown-item ms-0" href="#minors" style="display: block;">Child A<span class="bu">bu</span>se & Tr<span class="af">af</span>ficking</a>
+			      </ul>
+			    </li>
+				
+				<!-- Learn About Mental Health -->
+				<li class="nav-item ms-4" id="nav-unit-3">
+					<a class="nav-link mx-auto" href="#learn">Learn About Mental Health</a>
+				</li>
+				
+				<!-- Find a Therapist -->
+				<li class="nav-item ms-4" id="nav-unit-4">
+					<a class="nav-link" href="#therapist">Find a Therapist</a>
+				</li>
+				
+				<!-- About Emma -->
+				<li class="nav-item ms-4" id="nav-unit-5">
+					<a class="nav-link" href="#about">About Emma</a>
+				</li>			
+			</ul>
+			<form class="d-flex">
+				
+				<!-- Button to toggle between dark mode and light mode -->
+				<img type="button" onclick='modeToggle()' class="btn me-4 ms-4" id="mode-icon" alt="Toggle to switch between dark mode and light mode." data-bs-toggle="tooltip" title="Toggle dark vs. light mode." style="width:100%; max-width: 150px; padding: 0px;">
+			</form>
+		</div>
+	</nav>
+	<!-- endregion -->
+
+
+
+	<!-- Header, Censor Button, & Intro -->
+	<!-- #region -->
+
+	<!-- Header (includes the colorful image and the words on top of it) -->
 	<header>
-		<!-- Navbar -->
-		<nav class="navbar navbar-expand-sm">
-
-			<!-- Collapse -->
-			<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<!-- Links -->
-			<div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar" style="width: 100%;">
-				<ul class="navbar-nav">
-
-					<!-- US Hotlines -->
-					<li class="nav-item">
-						<a class="nav-link" href="#us">United States Hotlines</a>
-					</li>
-					<!-- Intl. Hotlines -->
-					<li class="nav-item">
-						<a class="nav-link" href="#intl">International Hotlines</a>
-					</li>
-					<!-- Learn More -->
-					<li class="nav-item">
-						<a class="nav-link" href="#learn">Learn about Mental Health</a>
-					</li>
-					<!-- Get a Therapist -->
-					<li class="nav-item">
-						<a class="nav-link" href="#therapist">Find a Therapist</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-
-		<h5 id="welcome">Emma Mei-Li & The Bloat Squad present</h5>
+		<br>
+		<h5>Emma Mei-Li & The Bloat Squad present</h5>
 		<h1>You Matter</h1>
 		<h5>Resources for Mental Health & Therapy</h5><br>
 	</header>
 
-	<a href="censor.html" style="text-decoration: none">
-		<button type="button" class="btn btn-dark btn-block">Click here
-			to censor potentially triggering terminology</button>
-	</a>
-
-	<br>
-
-	<div class="pagelayout">
-		<article id="hey" class="gradient-border">
-			<h2>Hey there!</h2>
-			<p>Thanks for stopping by. Here, you can find a collection of mental health resources put together by Emma and her
-				community. Whether you need to talk someone right now or are just looking to get started with therapy, we've got
-				you covered.</p>
-
-			<p>Each hotline offers one-click contact; you can open a new email message or dial a phone number just by clicking
-				on it. If you want to explore these resources more or access features that aren't linked in, such as online
-				chat, just click on the hotline's name to go to the most relevant area of its website.</p>
-
-			<p>If you need to access these resources without others in your household knowing, make sure to disable any
-				logging software on your computer and clear your search history once you're finished.</p>
-
-			<p>If your life is in immediate danger, dial <a href="tel:911">911</a> or <a
-					href="https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers" target="_blank">your country's
-					emergency response number</a>.</p>
-
-			<p>Lastly, thanks for taking the time to look through this page. Don't forget that you're worth it, and even
-				though things might suck right now, you've got Emma and the Bloat Squad in your corner.</p>
-		</article>
-
-		<br>
-		<h2 id="us">United States Hotlines</h2>
-		<article class="resourceLink">
-			<h4><a href="https://suicidepreventionlifeline.org/talk-to-someone-now/" target="_blank">National Suicide
-					Prevention Lifeline</a><button class="btn" data-toggle="collapse" data-target="#nspl">+</button></h4>
-			<h6><a href="tel:18002738255">1 (800) 273-8255</a></h6>
-
-			<div id="nspl" class="collapse">
-				<hr>
-				<p>"The National Suicide Prevention Lifeline provides free and confidential support for people in distress,
-					prevention and crisis resources for you or your loved ones, and best practices for professionals." Available
-					24/7 via phone or online chat.</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://www.thetrevorproject.org/get-help-now/" target="_blank">The Trevor Project</a><button
-					class="btn" data-toggle="collapse" data-target="#trev">+</button></h4>
-			<h6><a href="tel:18664887386">1 (866) 488-7386</a></h6>
-			<h6><b>Text</b> START to <a href="sms:678678">678678</a></h6>
-
-			<div id="trev" class="collapse">
-				<hr>
-				<p>"The Trevor Project is the leading national organization providing crisis intervention and suicide
-					prevention
-					services to lesbian, gay, bisexual, transgender, queer & questioning youth." Available 24/7 via phone, text,
-					or online chat.</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://www.glbthotline.org/hotline.html" target="_blank">Gay, Lesbian, Bisexual, and Transgender
-					National Hotline</a><button class="btn" data-toggle="collapse" data-target="#lgbt">+</button></h4>
-			<h6><b>Hotline:</b> <a href="tel:18888434564">1 (888) 843-4564</a></h6>
-			<h6><b>Youth Talkline:</b> <a href="tel:18002467743">1 (800) 246-7743</a></h6>
-			<h6><b>Senior Helpline:</b> <a href="tel:18882347243">1 (888) 234-7243</a></h6>
-			<h6><a href="mailto:help@LGBThotline.org">help@LGBThotline.org</a></h6>
-
-			<div id="lgbt" class="collapse">
-				<hr>
-				<p>"The LGBT National Help Center serves gay, lesbian, bisexual, transgender, and questioning people by
-					providing free and confidential peer support and local resources." Available on a varying schedule via phone
-					or online chat.</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://www.thehotline.org/get-help/" target="_blank">National Domestic Violence Hotline</a><button
-					class="btn" data-toggle="collapse" data-target="#ndvh">+</button></h4>
-			<h6><a href="tel:18007997233">1 (800) 799-7233</a></h6>
-			<h6><b>Text</b> START to <a href="sms:18007997233">1 (800) 799-7233</a></h6>
-
-			<div id="ndvh" class="collapse">
-				<hr>
-				<p>"The National Domestic Violence Hotline is available for anyone experiencing domestic violence, seeking
-					resources or information, or questioning unhealthy aspects of their relationship." Available 24/7 via phone,
-					text, or online chat.</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://www.rainn.org/get-help" target="_blank">Rape, Abuse, and Incest National Network
-					(RAINN)</a><button class="btn" data-toggle="collapse" data-target="#rainn">+</button></h4>
-			<h6><a href="tel:18006564673">1 (800) 656-4673</a></h6>
-
-			<div id="rainn" class="collapse">
-				<hr>
-				<p>"RAINN (Rape, Abuse & Incest National Network) is the nation’s largest anti-sexual violence organization.
-					RAINN created and operates the National Sexual Assault Hotline in partnership with more than 1,000 local
-					sexual assault service providers across the country and operates the DoD Safe Helpline for the Department of
-					Defense. RAINN also carries out programs to prevent sexual violence, help survivors, and ensure that
-					perpetrators are brought to justice." Available 24/7 via phone or online chat.</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://www.yourlifeyourvoice.org/Pages/home.aspx" target="_blank">Your Life Your Voice
-					Helpline</a><button class="btn" data-toggle="collapse" data-target="#ylyv">+</button></h4>
-			<h6><a href="tel:18004483000">1 (800) 448-3000</a></h6>
-			<h6>Text VOICE to <a href="sms:20121">20121</a> (<i>hours for text service vary</i>)</h6>
-
-			<div id="ylyv" class="collapse">
-				<hr>
-				<p>"Your Life Your Voice is a program of Boystown USA and is available to children, parents, and families who
-					are struggling with self-harm, mental health disorders, and abuse." Available 24/7 via phone, text, email,
-					or
-					online chat.</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://www.nami.org/help" target="_blank">National Alliance on Mental Illness (NAMI)
-					Helpline</a><button class="btn" data-toggle="collapse" data-target="#nami">+</button></h4>
-			<h6><a href="tel:18009506264">1 (800) 950-6264</a></h6>
-			<h6><a href="mailto:info@nami.org">info@nami.org</a></h6>
-
-			<div id="nami" class="collapse">
-				<hr>
-				<p>"The National Alliance on Mental Illness (NAMI) Helpline assists individuals and families who have
-					questions
-					about mental health disorders, treatment, and support services." Available Mon-Fri, 10:00am to 6:00pm
-					Eastern
-					Standard Time via phone or email.</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://www.1800runaway.org/youth-teens/get-help" target="_blank">National Runaway
-					Safeline</a><button class="btn" data-toggle="collapse" data-target="#nrsl">+</button></h4>
-			<h6><a href="tel:18007862929">1 (800) 786-2929</a></h6>
-			<h6><a href="mailto:info@1800runaway.org">info@1800runaway.org</a></h6>
-
-			<div id="nrsl" class="collapse">
-				<hr>
-				<p>"The National Runaway Safeline provides crisis and support services for homeless and runaway youth in the
-					United States." Available 24/7 via phone, email, forums, or online chat.</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://www.samhsa.gov/" target="_blank">Substance Abuse and Mental Health Services Administration
-					(SAMHSA) Helpline</a><button class="btn" data-toggle="collapse" data-target="#samhsa">+</button></h4>
-			<h6><a href="tel:18006624357">1 (800) 662-4357</a></h6>
-
-			<div id="samhsa" class="collapse">
-				<hr>
-				<p>"SAMHSA’s National Helpline provides free and confidential treatment, referral, and information services
-					for
-					individuals and families facing mental and/or substance abuse disorders." Available 24/7 via phone in both
-					<b>English</b> and <b>Spanish</b>.
-				</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://hotline.womenslaw.org" target="_blank">WomensLaw</a><button class="btn"
-					data-toggle="collapse" data-target="#wola">+</button></h4>
-			<h6><a href="https://hotline.womenslaw.org/public/ask" target="_blank">Web Form</a></h6>
-
-			<div id="wola" class="collapse">
-				<hr>
-				<p>"The WomensLaw online helpline provides basic legal information, referrals, and emotional support for
-					survivors of abuse." Questions are submitted via a form embedded in their website and answered in 1–5
-					business
-					days via your choice of their website and/or email.</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://childhelphotline.org/" target="_blank">ChildHelp National Child Abuse Hotline</a><button
-					class="btn" data-toggle="collapse" data-target="#chnc">+</button></h4>
-			<h6><a href="tel:18004224453">1 (800) 422-4453</a></h6>
-			<h6><b>Text:</b> <a href="sms:18004224453">1 (800) 442-4453</a></h6>
-
-			<div id="chnc" class="collapse">
-				<hr>
-				<p>"The Childhelp National Child Abuse Hotline is dedicated to the prevention of child abuse. Serving the U.S.
-					and Canada, the hotline is staffed 24 hours a day, 7 days a week with professional crisis counselors
-					who—through interpreters—provide assistance in over 170 languages. The hotline offers crisis intervention,
-					information, and referrals to thousands of emergency, social service, and support resources. All calls are
-					confidential." Available 24/7 via phone, text, or online chat.</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="http://www.missingkids.com/gethelpnow/cybertipline" target="_blank">National Center for Missing and
-					Exploited Children (NCMEC)</a><button class="btn" data-toggle="collapse" data-target="#ncmec">+</button>
-			</h4>
-			<h6><a href="tel:18008435678">1 (800) 843-5678</a></h6>
-
-			<div id="ncmec" class="collapse">
-				<hr>
-				<p>"NCMEC serves as a clearinghouse and comprehensive reporting center for all issues related to the
-					prevention
-					of and recovery from child victimization." Available at various hours via phone or tipline.</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://humantraffickinghotline.org/get-help" target="_blank">National Human Trafficking
-					Hotline</a><button class="btn" data-toggle="collapse" data-target="#nhth">+</button></h4>
-			<h6><a href="tel:18883737888">1 (888) 373-7888</a></h6>
-			<h6><b>Text:</b> <a href="sms:233733">233733</a></h6>
-
-			<div id="nhth" class="collapse">
-				<hr>
-				<p>"The National Human Trafficking Hotline is a national anti-trafficking hotline serving survivors of human
-					trafficking and the anti-trafficking community in the United States. The toll-free hotline is available to
-					answer calls from anywhere in the country, 24 hours a day, 7 days a week, every day of the year in more than
-					200 languages." Available 24/7 via phone or text in many languages.</p>
-			</div>
-		</article>
-		<br>
-		<h2 id="intl">International Hotlines</h2>
-
-		<article class="resourceLink">
-			<h4><a href="https://www.crisistextline.org/" target="_blank">Crisis Text Line</a><button class="btn"
-					data-toggle="collapse" data-target="#ctli">+</button></h4>
-			<h6><b>United States & Canda:</b> Text HOME to <a href="sms:741741">741741</a></h6>
-			<h6><b>United Kingdom:</b> Text HOME to <a href="sms:85258">85258</a></h6>
-			<h6><b>Ireland:</b> Text HOME to <a href="sms:50808">50808</a></h6>
-
-			<div id="ctli" class="collapse">
-				<hr>
-				<p>"Crisis Text Line is here for any crisis. A live, trained Crisis Counselor receives the text and responds,
-					all from our secure online platform. The volunteer Crisis Counselor will help you move from a hot moment to a
-					cool moment." Available 24/7 via text in the United States, Canda, the United Kingdom, and Ireland.</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://pathwaystosafety.org/get-help-now/" target="_blank">Pathways to Safety
-					International</a><button class="btn" data-toggle="collapse" data-target="#pwts">+</button></h4>
-			<h6>For Americans currently abroad.</h6>
-			<h6><a href="tel:18337233833">1 (833) 723-3833</a></h6>
-			<h6><a href="mailto:crisis@pathwaystosafety.org">crisis@pathwaystosafety.org</a></h6>
-
-			<div id="pwts" class="collapse">
-				<hr>
-				<p>"Pathways to Safety International assists Americans experiencing interpersonal and gender based violence
-					abroad." Available 24/7 via phone, email, or online chat to Americans currently located in other countries.
-				</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://en.wikipedia.org/wiki/List_of_suicide_crisis_lines" target="_blank">Mental Health Hotlines in
-					Every Country</a><button class="btn" data-toggle="collapse" data-target="#wiki">+</button></h4>
-			<h6>If none of the above options cover your home country, please check this list</h6>
-
-			<div id="wiki" class="collapse">
-				<hr>
-				<p>While Wikipedia isn't always the most reliable source of information, it does a fantastic job of pointing
-					folks towards other resources. Check out the above link for a comprehensive listing of mental health hotlines
-					that serve countries all around the world.</p>
-			</div>
-		</article>
-
-		<br>
-		<h2 id="learn">Learn about Mental Health</h2>
-
-		<article class="resourceLink">
-			<h4><a href="https://socialworklicensemap.com/social-work-resources/mental-health-resources-list/"
-					target="_blank">Social Work License Map</a><button class="btn" data-toggle="collapse"
-					data-target="#swlm">+</button></h4>
-			<h6>Like a linktree for United States mental health resources</h6>
-
-			<div id="swlm" class="collapse">
-				<hr>
-				<p>"Mental health is an undeniably important matter, yet most people don’t have access to the resources they
-					need when they need help. At Social Work License Map, we have compiled a comprehensive list of resources for
-					anyone seeking information about and/or help for a range of mental health issues.</p>
-
-				<p>Our list spans diagnostic tools, research portals, government organizations, nonprofits, blogs, and phone
-					hotlines devoted to addressing issues ranging from general mental illnesses and disorders such as autism,
-					anxiety, depression, eating disorders, and substance abuse, to the specific needs of diverse populations,
-					including LGBTQ youth, minorities, women, and veterans. Take a look at these resources, and we hope you find
-					our list helpful!"</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://www.rethink.org/advice-and-information/about-mental-illness/learn-more-about-conditions/"
-					target="_blank">Rethink.org</a><button class="btn" data-toggle="collapse" data-target="#ret">+</button></h4>
-			<h6>Plain-language explanations of mental health conditions</h6>
-
-			<div id="ret" class="collapse">
-				<hr>
-				<p>"If you have a mental health condition, your doctor will give you a formal diagnosis. While most people
-					experience mental health conditions in very different ways, most people will share some common symptoms and
-					side-effects."</p>
-
-				<p>This isn't the most scientific source, and its grammar leaves plenty to be desired. But it does a good job of
-					breaking many of the most common mental health conditions down into concise summaries that you don't need a
-					medical degree to understand. It also has an extensive list of hotlines in the UK.</p>
-			</div>
-		</article>
-
-		<article class="resourceLink">
-			<h4><a href="https://medlineplus.gov/mentalhealth.html" target="_blank">MedlinePlus: U.S. National Library of
-					Medicine</a><button class="btn" data-toggle="collapse" data-target="#med">+</button></h4>
-			<h6>Comprehensive government source on all things mental health</h6>
-
-			<div id="med" class="collapse">
-				<hr>
-				<p>"Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel,
-					and act as we cope with life. It also helps determine how we handle stress, relate to others, and make
-					choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood
-					and aging.</p>
-
-				<p>Mental disorders are serious conditions which can affect your thinking, mood, and behavior. They may be
-					occasional or long-lasting. They can affect your ability to relate to others and function each day. Mental
-					disorders are common; more than half of all Americans will be diagnosed with one at some time in their life.
-					But there are treatments. People with mental disorders can get better, and many of them recover completely."
-				</p>
-
-				<p>This source has lots of Spanish language content!</p>
-			</div>
-		</article>
-
-		<br>
-		<h2 id="therapist">Find a Therapist</h2>
-		<div class="gallery">
-			<!-- Rise Above the Disorder (RAD) -->
-			<div class="resource">
-				<img src="images/RAD.png">
-				<div>
-					<h4><a href="https://www.youarerad.org/therapy" target="_blank">Rise Above the Disorder</h4></a>
-					<h6>For Everyone at <b>Low or No Cost</b></h6>
-					<p>"Rise Above the Disorder (RAD) began as a video game group dedicated to helping gamers. Today, it's a
-						non-profit dedicated to removing the two greatest barriers to mental health care: access and affordability.
-						To accomplish our mission, we provide a universal mental health care system to people around the world.</p>
-
-					<p>The journey towards mental wellness can be long and challenging. You may have found this page at your
-						darkest hour, at the height of motivation, or with great dedication to someone else's wellbeing; regardless,
-						the path to healing begins here."</p>
-					<a href="https://www.youarerad.org/therapy" target="_blank" class="btn btn-outline-light">Visit!</a>
-				</div>
-			</div>
-
-			<!-- APA -->
-			<div class="resource">
-				<img src="images/APA.png">
-				<div>
-					<h4><a href="https://www.apa.org/topics/crisis-hotlines" target="_blank">American Psychological Association
-					</h4></a>
-					<h6>For Everyone in the United States</h6>
-					<p>"A consumer resource featuring information related to psychological issues affecting your daily physical
-						and emotional well-being. Refer to our fact sheet series to learn how psychologists can help.</p>
-
-					<p>Need to talk to someone? Specialists are available for confidential telephone counseling, or find a
-						psychologist near you for longer-term help."</p>
-					<a href="https://www.apa.org/topics/crisis-hotlines" target="_blank" class="btn btn-outline-light">Visit!</a>
-				</div>
-			</div>
-
-			<!-- Findatherapist.com -->
-			<div class="resource">
-				<img src="images/FindATherapist.png">
-				<div>
-					<h4><a href="https://www.findatherapist.com/" target="_blank">Findatherapist.com</h4></a>
-					<h6>For Everyone in the United States</h6>
-					<p>"Find A Therapist connects you with licensed mental health professionals including psychologists, clinical
-						social workers, marriage and family therapists, psychiatrists, and professional counselors.</p>
-
-					<p>We understand that admitting the need for help is the first step toward improving your life, but finding
-						the right therapist can be difficult. We have made it easy to search for a local therapist and send them a
-						secure confidential message. You can be assured your privacy is respected and protected while finding the
-						help you deserve."</p>
-					<a href="https://www.findatherapist.com/" target="_blank" class="btn btn-outline-light">Visit!</a>
-				</div>
-			</div>
-		</div>
+	<!-- Censor toggle button built with Bootstrap classes -->
+	<div class="d-grid">
+		<button type="button" class="btn btn-block btn-dark" id="censor" onclick='checkCensor()'>Click here to censor potentially triggering terminology</button>
 	</div>
+	
+	<div class="pagelayout">
 
-	<footer>
-		<br>
-		<p>© 2021 Emma Mei-Li & Cass Aleatory</p>
-		<p>This site is hosted for free by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
-		<p>Site credits: InfiniteAngles [information research, organization]; Cass Aleatory [web development,
-			copyediting]; Emma Mei-Li [executive design]</p>
-		<p>See information that's out of date? <a href="mailto:cassaleatory@gmail.com">Email the site administrators</a>
-			with the details and we'll update it as soon as possible!</p><br>
-	</footer>
+		<!-- Intro -->
+		<section class="gradient-border" id="welcome">
+			<article>
+				<h2>Hey there!</h2>
+
+				<p>Thanks for stopping by. Here, you can find a collection of mental health resources put together by Emma and her community. Whether you need to talk someone right now or are just looking to get started with therapy, we've got you covered.</p>
+
+				<p>Each hotline offers one-click contact; you can open a new email message or dial a phone number just by clicking on it. If you want to explore these resources more or access features that aren't linked in, such as online chat, just click on the hotline's name to go to the most relevant area of its website.</p>
+
+				<p>If you need to access these resources without others in your household knowing, make sure to disable any logging software on your computer and clear your search history once you're finished.</p>
+
+				<p>If your life is in immediate danger, dial <a href="tel:911" class="contact">911</a> or <a href="https://en.wikipedia.org/wiki/List_of_emergency_telephone_numbers" target="_blank">your country's emergency response number</a>.</p>
+
+				<p>Lastly, thanks for taking the time to look through this page. Don't forget that you're worth it, and even though things might suck right now, you've got Emma and the Bloat Squad in your corner.</p>
+			</article>
+		</section>
+		<!-- endregion -->
+
+
+
+		<!-- Find Support (Hotlines, etc.) -->
+		<!-- #region -->
+
+		<!-- General Mental Health Hotlines -->
+		<!-- #region -->
+		<br><br>
+		<section id="general">
+			<h2>General Mental Health Hotlines</h2>
+			
+			<!-- 988 Suicide & Crisis Lifeline -->
+			<article class="resourceLink">
+				<h4><a href="https://suicidepreventionlifeline.org/talk-to-someone-now/" target="_blank">988 S<span class="ui">ui</span>cide & Crisis Lifeline</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#nspl">+</button></h4>
+				<h6><b>Phone:</b> <a href="tel:988">988</a></h6>
+				<h6><b>Text:</b> <a href="sms:988">988</a></h6>
+				<h6><b>OG Number:</b> <a href="tel:18002738255">1 (800) 273-8255</a></h6>
+				<h6><b>En Español:</b> <a href="tel:18886289454">1 (888) 628-9454</a></h6>
+				<h6><b>Deaf & Hard of Hearing TTY:</b> Use your preferred relay service or dial <a href="tel:711">711</a> then <a href="tel:988">988</a></h6>
+
+				<div id="nspl" class="collapse">
+					<hr>
+					<p>Formerly known as the <b>National S<span class="ui">ui</span>cide Prevention Lifeline</b>.</p>
+
+					<p>Available in the United States 24/7 via phone, text, and online chat.</p> 
+
+					<p>Offers help in English and en Español, as well as Deaf- & Hard of Hearing-accessible resources (TTY).</p>
+				
+					<blockquote>"If you’re thinking about s<span class="ui">ui</span>cide, are worried about a friend or loved one, or would like emotional support, the Lifeline network is available 24/7 across the United States."<br><span class="quote-source">-The 988 S<span class="ui">ui</span>cide & Crisis Lifeline's website</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- Crisis Text Line -->
+			<article class="resourceLink">
+				<h4><a href="https://www.crisistextline.org/" target="_blank">Crisis Text Line</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#ctli">+</button></h4>
+				<h6><b>United States:</b> Text HOME to <a href="sms:741741">741741</a></h6>
+				<h6><b>Canada:</b> Text HOME to <a href="sms: 686868">686868</a></h6>
+				<h6><b>United Kingdom:</b> Text HOME to <a href="sms:85258">85258</a></h6>
+				<h6><b>Ireland:</b> Text HOME to <a href="sms:50808">50808</a></h6>
+
+				<div id="ctli" class="collapse">
+					<hr>
+					<p>Available in the United States, Canda, the United Kingdom, and Ireland 24/7 via text, online chat, and WhatsApp.</p>
+
+					<blockquote>"Crisis Text Line is here for any crisis. A live, trained Crisis Counselor receives the text and responds, all from our secure online platform. The volunteer Crisis Counselor will help you move from a hot moment to a cool moment."<br><span class="quote-source">-The Crisis Text Line's website</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- Your Life Your Voice Helpline -->
+			<article class="resourceLink">
+				<h4><a href="https://www.yourlifeyourvoice.org/Pages/home.aspx" target="_blank">Your Life Your Voice Helpline</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#ylyv">+</button></h4>
+				<h6><b>Phone:</b> <a href="tel:18004483000">1 (800) 448-3000</a></h6>
+				<h6><b>Text</b> VOICE to <a href="sms:20121">20121</a> (Hours for text service vary.)</h6>
+
+				<div id="ylyv" class="collapse">
+					<hr>
+					<p>Available 24/7 via phone, text, email, and online chat.</p>
+
+					<blockquote>"Your Life Your Voice is a program of Boystown USA and is available to children, parents, and families who are struggling with self-h<span class="ar">ar</span>m, mental health disorders, and a<span class = "bu">bu</span>se."<br><span class="quote-source">-Your Life Your Voice's website</span></blockquote>
+				</div>
+			</article><br>
+			
+			<!-- National Alliance on Mental Illness (NAMI) -->
+			<article class="resourceLink">
+				<h4><a href="https://www.nami.org/help" target="_blank">National Alliance on Mental Illness (NAMI) Helpline</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#nami">+</button></h4>
+				<h6><b>Phone:</b> <a href="tel:18009506264">1 (800) 950-6264</a></h6>
+				<h6><b>Text</b> HelpLine to <a href="sms:62640">62640</a></h6>
+				<h6><b>Email:</b> <a href="mailto:info@nami.org">helpline@nami.org</a></h6>
+
+				<div id="nami" class="collapse">
+					<hr>
+					<p>Available Mon-Fri, 10:00am to 10:00pm U.S. Eastern Time (<a href="https://www.timeanddate.com/time/zones/et" target="_blank">see current U.S. Eastern Time here</a>) via phone, text, email, and online chat.</p>
+
+					<blockquote>"The National Alliance on Mental Illness (NAMI) Helpline assists individuals and families who have questions about mental health disorders, treatment, and support services."<br><span class="quote-source">-NAMI's website</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- Vibrant Emotional Health -->
+			<article class="resourceLink">
+				<h4><a href="https://www.vibrant.org/" target="_blank">Vibrant Emotional Health</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#vibr">+</button></h4>
+				<h6>Operates a wide variety of mental and emotional health resources in the United States</h6>
+
+				<div id="vibr" class="collapse">
+					<hr>
+					<blockquote>"We run innovative community programs for people at all stages of life, and state-of-the-art crisis lines. ... As leaders, advocates, educators, and innovators in mental health, we have been raising awareness and offering support to everyone who is struggling. We work every single day to help save lives and assist people to get care anytime, anywhere and in any way that works for them. We are unwavering in our belief that everyone can achieve emotional wellness with the right care and support."<br><span class="quote-source">-Vibrant Emotional Health's website</span></blockquote>
+
+					<p>This source contains a catalog of wellness resources, featuring both mainstream hotlines and smaller, more community-driven initiatives that don't have their own listings here on You Matter. Some of their more unique offerings include Disaster Distress resources, ASL (American Sign Language) resources, and the NYC Well program, which serves New York City.</p>
+				</div>
+			</article><br>
+
+			<!-- Global Mental Health Hotlines -->
+			<article class="resourceLink">
+				<h4><a href="https://en.wikipedia.org/wiki/List_of_suicide_crisis_lines" target="_blank">Mental Health Hotlines in Every Country</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#wiki">+</button></h4>
+				<h6>If none of the above options cover your home country, please check this list.</h6>
+
+				<div id="wiki" class="collapse">
+					<hr>
+					<blockquote>While Wikipedia isn't always the most reliable source of information, it does a fantastic job of pointing folks towards other resources. Check out the above link for a comprehensive listing of mental health hotlines that serve countries all around the world.<br><span class="quote-source">-The You Matter Team</span></blockquote>
+				</div>
+			</article><br>
+		</section>
+		<!-- endregion -->
+
+
+
+		<!-- LGBTQ+ Mental Health Support -->
+		<!-- #region -->
+		<br><br>
+		<section id="lgbtq">
+			<h2>LGBTQ+ Mental Health Support</h2>
+			
+			<!-- The Trevor Project -->
+			<article class="resourceLink">
+				<h4><a href="https://www.thetrevorproject.org/get-help-now/" target="_blank">The Trevor Project</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#trev">+</button></h4>
+				<h6><b>Phone:</b> <a href="tel:18664887386">1 (866) 488-7386</a></h6>
+				<h6><b>Text</b> START to <a href="sms:678678">678678</a></h6>
+
+				<div id="trev" class="collapse">
+					<hr>
+					<p>Available 24/7 via phone, text, and online chat.</p>
+
+					<blockquote>"The Trevor Project is the leading national organization providing crisis intervention and s<span class="ui">ui</span>cide prevention services to lesbian, gay, bisexual, transgender, queer & questioning youth."<br><span class="quote-source">-The Trevor Project's website</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- Trans Lifeline -->
+			<article class="resourceLink">
+				<h4><a href="https://translifeline.org/hotline/" target="_blank">Trans Lifeline</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#trans">+</button></h4>
+				<h6><b>United States:</b> <a href="tel:18775658860">1 (877) 565-8860</a></h6>
+				<h6><b>Canada:</b> <a href="tel:18773306366">1 (877) 330-6366</a></h6>
+
+				<div id="trans" class="collapse">
+					<hr>
+					<p>Available in the United States and Canada 24/7 via phone.</p>
+
+					<blockquote>"Trans Lifeline’s Hotline is a peer support phone service run by trans people for our trans and questioning peers. Call us if you need someone trans to talk to, even if you’re not in crisis or if you’re not sure you’re trans."<br><span class="quote-source">-Trans Lifeline's website</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- LGBT National Help Center -->
+			<article class="resourceLink">
+				<h4><a href="https://www.lgbthotline.org/" target="_blank">LGBT National Help Center</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#lgbt">+</button></h4>
+				<h6><b>Hotline:</b> <a href="tel:18888434564">1 (888) 843-4564</a></h6>
+				<h6><b>Youth Talkline:</b> <a href="tel:18002467743">1 (800) 246-7743</a></h6>
+				<h6><b>Senior Helpline:</b> <a href="tel:18882347243">1 (888) 234-7243</a></h6>
+				<h6><b>Coming Out Support Hotline:</b> <a href="tel:18886885428">1 (888) 688-5428</a></h6>
+				<h6><b>Email:</b> <a href="mailto:help@lgbthotline.org">help@lgbthotline.org</a></h6>
+
+				<div id="lgbt" class="collapse">
+					<hr>
+					<p>Available on a varying schedule via phone and online chat.</p>
+
+					<blockquote>"The LGBT National Help Center serves gay, lesbian, bisexual, transgender, and questioning people by providing free and confidential peer support and local resources."<br><span class="quote-source">-The LGBT National Help Center's website</span></blockquote>
+				</div>
+			</article><br>
+		</section>
+		<!-- endregion -->
+
+
+		
+		<!-- Veterans' Mental Health Support -->
+		<!-- #region -->
+		<br><br>
+		<section id="vets">
+			<h2>Veterans' Mental Health Support</h2>
+			
+			<!-- Veterans Crisis Line -->
+			<article class="resourceLink">
+				<h4><a href="https://www.veteranscrisisline.net/" target="_blank">Veterans Crisis Line</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#vcl">+</button></h4>
+				<h6>Dial <a href="tel:988">988</a> then press 1</h6>
+				<h6><b>Text:</b> <a href="sms:838255">838255</a></h6>
+				<h6><b>Deaf & Hard of Hearing TTY:</b> <a href="tel:18007994889">1 (800) 799 4889</a></h6>
+
+				<div id="vcl" class="collapse">
+					<hr>
+					<p>Available in the United States 24/7 via phone, text, and online chat.</p> 
+
+					<p>Offers help in English and en Español, as well as Deaf- & Hard of Hearing-accessible resources (TTY).</p>
+
+					<blockquote>"If you're a Veteran in crisis or concerned about one, the Veterans Crisis Line is a free, confidential resource that connects you to a real person specially trained to support Veterans. You don't have to be enrolled in VA benefits or health care to call."<br><span class="quote-source">-The Veterans Crisis Line's website</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- MindWise Innovations Screenings -->
+			<article class="resourceLink">
+				<h4><a href="https://screening.mentalhealthscreening.org/military_ndsd/" target="_blank">MindWise Innovations</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#mwin">+</button></h4>
+				<h6>Online screenings for veterans</h6>
+
+				<div id="mwin" class="collapse">
+					<hr>
+					<p>Available in the United States 24/7 via its website.</p> 
+
+					<p>Offers screenings in English and en Español.</p>
+
+					<blockquote><p>"Behavioral health—which includes mental health, substance use, and more—is a key part of your overall well-being. Brief screenings are the quickest way to determine if you or someone you care about should connect with a behavioral health professional.</p>
+
+					<p>Think of these as a checkup from your neck up. This program is completely anonymous and confidential, and immediately following the brief questionnaire you will see your results, recommendations, and key resources."<br><span class="quote-source">-MindWise Innovations' website</span></p></blockquote>
+				</div>
+			</article><br>
+
+			<!-- U.S. Department of Veterans Affairs -->
+			<article class="resourceLink">
+				<h4><a href="https://www.mentalhealth.va.gov/" target="_blank">U.S. Department of Veterans Affairs</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#usva">+</button></h4>
+				<h6>U.S. VA's subpage on Veterans' mental health</h6>
+
+				<div id="usva" class="collapse">
+					<hr>
+					<p>Available in the United States 24/7 via its website.</p>
+
+					<blockquote>"VA has a variety of mental health resources, information, treatment options and more — all accessible to Veterans, Veterans’ supporters and the general public. Explore the pages below to learn more about a specific mental health topic or to find information specifically tailored to your needs."<br><span class="quote-source">-The U.S. Department of Veterans Affairs' website</span></blockquote>
+				</div>
+			</article><br>
+		</section>
+		<!-- endregion -->
+
+
+
+		<!-- Substance Abuse Support -->
+		<!-- #region -->
+		<br><br>
+		<section id="substance">
+			<h2>Substance A<span class="bu">bu</span>se Support</h2>
+
+			<!-- Substance Abuse & Mental Health Services Administration (SAMHSA) -->
+			<article class="resourceLink">
+				<h4><a href="https://www.samhsa.gov/" target="_blank">Substance A<span class = "bu">bu</span>se and Mental Health Services Administration (SAMHSA) Helpline</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#samhsa">+</button></h4>
+				<h6><b>Phone:</b> <a href="tel:18006624357">1 (800) 662-4357</a></h6>
+
+				<div id="samhsa" class="collapse">
+					<hr>
+					<p>Available 24/7 via phone.</p> 
+
+					<p>Offers help in English and en Español.</p>
+
+					<blockquote>"SAMHSA’s National Helpline provides free and confidential treatment, referral, and information services for individuals and families facing mental and/or substance a<span class = "bu">bu</span>se disorders."<br><span class="quote-source">-SAMSHA's website</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- National Drug Helpline -->
+			<article class="resourceLink">
+				<h4><a href="https://drughelpline.org/" target="_blank">National Drug Helpline</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#ndh">+</button></h4>
+				<h6><b>Phone:</b> <a href="tel:18442890879">1 (844) 289-0879</a></h6>
+
+				<div id="ndh" class="collapse">
+					<hr>
+					<p>Available 24/7 via phone.</p> 
+
+					<blockquote>"The helpful and friendly operators can give you lots of valuable information about substance use, including how to recognize drug use in a loved one, the different types of addiction treatments available, and the cost of drug and alcohol rehab. Hotline operators can also help identify addiction treatment programs in your area."<br><span class="quote-source">-The National Drug Helpline's website</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- Contra Costa Health -->
+			<article class="resourceLink">
+				<h4><a href="https://cchealth.org/aod/" target="_blank">Contra Costa Health</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#contra">+</button></h4>
+				<h6><b>Phone:</b> <a href="tel:18008461652">1 (800) 846-1652</a></h6>
+
+				<div id="contra" class="collapse">
+					<hr>
+					<p>Available via phone. They also have a lot of resources on their website.</p>
+
+					<blockquote>"[Contra Costa Health's] Alcohol and Other Drugs Services (AODS) "puts people first". The mission of AODS is to advocate for alcohol and drug free communities by promoting individual and family responsibility, hope, and self-sufficiency."<br><span class="quote-source">-Contra Costa Health's website</span></blockquote> 
+				</div>
+			</article><br>
+		</section>
+		<!-- endregion -->
+
+
+
+		<!-- Domestic & Sexual Violence Support -->
+		<!-- #region -->
+		<br><br>
+		<section id="domestic">
+			<h2>Domestic & Sexual V<span class="io">io</span>lence Support</h2>
+			
+			<!-- National Domestic Violence Hotline -->
+			<article class="resourceLink">
+				<h4><a href="https://www.thehotline.org/get-help/" target="_blank">National Domestic V<span class="io">io</span>lence Hotline</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#ndvh">+</button></h4>
+				<h6><b>Phone:</b> <a href="tel:18007997233">1 (800) 799-7233</a></h6>
+				<h6><b>Text</b> START to <a href="sms:88788">88788</a></h6>
+
+				<div id="ndvh" class="collapse">
+					<hr>
+					<p>Available 24/7 via phone, text, and online chat.</p>
+
+					<blockquote>"The National Domestic V<span class="io">io</span>lence Hotline is available for anyone experiencing domestic v<span class="io">io</span>lence, seeking resources or information, or questioning unhealthy aspects of their relationship."<br><span class="quote-source">-The National Domestic V<span class="io">io</span>lence Hotline's website</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- Rape, Abuse, & Incest National Network (RAINN) -->
+			<article class="resourceLink">
+				<h4><a href="https://www.rainn.org/get-help" target="_blank">R<span class="ap">ap</span>e, A<span class="bu">bu</span>se, and Incest National Network (RAINN)</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#rainn">+</button></h4>
+				<h6><b>Phone:</b> <a href="tel:18006564673">1 (800) 656-4673</a></h6>
+
+				<div id="rainn" class="collapse">
+					<hr>
+					<p>Available 24/7 via phone and online chat.</p>
+
+					<p>Offers help in English and en Español.</p>
+
+					<blockquote>"RAINN (R<span class="ap">ap</span>e, A<span class="bu">bu</span>se & Incest National Network) is the nation’s largest anti-sexual v<span class="io">io</span>lence organization. RAINN created and operates the National Sexual As<span class="sa">sa</span>ult Hotline in partnership with more than 1,000 local sexual as<span class="sa">sa</span>ult service providers across the country and operates the DoD Safe Helpline for the Department of Defense. RAINN also carries out programs to prevent sexual v<span class="io">io</span>lence, help survivors, and ensure that perpetrators are brought to justice."<br><span class="quote-source">-RAINN's website</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- Pathways to Safety -->
+			<article class="resourceLink">
+				<h4><a href="https://pathwaystosafety.org/get-help-now/" target="_blank">Pathways to Safety International</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#pwts">+</button></h4>
+				<h6>For Americans currently abroad.</h6>
+				<h6><b>Phone:</b> <a href="tel:18337233833">1 (833) 723-3833</a></h6>
+				<h6><b>Email:</b> <a href="mailto:crisis@pathwaystosafety.org">crisis@pathwaystosafety.org</a></h6>
+
+				<div id="pwts" class="collapse">
+					<hr>
+					<p>Available to those from the United States who're currently aborad via phone and email.</p>
+
+					<blockquote>"Pathways to Safety International assists Americans experiencing interpersonal and gender based v<span class="io">io</span>lence abroad."<br><span class="quote-source">-Pathways to Safety's website</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- WomensLaw -->
+			<article class="resourceLink">
+				<h4><a href="https://hotline.womenslaw.org" target="_blank">WomensLaw</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#wola">+</button></h4>
+				<h6><a href="https://hotline.womenslaw.org/public/ask" target="_blank">Email/Web Form</a></h6>
+
+				<div id="wola" class="collapse">
+					<hr>
+					<p>Offers help in English and en Español.</p>
+
+					<p>Questions are submitted via a form embedded in their website and answered within 1–5 business days via your choice of email or a secure WomensLaw account.</p>
+
+					<blockquote>"The WomensLaw online helpline provides basic legal information, referrals, and emotional support for survivors of a<span class="bu">bu</span>se."<br><span class="quote-source">-WomensLaw's website</span></blockquote>				
+				</div>
+			</article><br>
+		</section>
+		<!-- endregion -->
+
+
+
+		<!-- Child Abuse & Trafficking Support -->
+		<!-- #region -->
+		<br><br>
+		<section id="minors">
+			<h2>Child A<span class="bu">bu</span>se & Tr<span class="af">af</span>ficking Support</h2>
+			
+			<!-- National Runaway Safeline -->
+			<article class="resourceLink">
+				<h4><a href="https://www.1800runaway.org/youth-teens/get-help" target="_blank">National Runaway Safeline</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#nrsl">+</button></h4>
+				<h6><b>Phone:</b> <a href="tel:18007862929">1 (800) 786-2929</a></h6>
+				<h6><b>Email:</b> <a href="mailto:info@1800runaway.org">info@1800runaway.org</a></h6>
+
+				<div id="nrsl" class="collapse">
+					<hr>
+					<p>Available 24/7 via phone, email, forums, or online chat.</p>
+
+					<blockquote>"The National Runaway Safeline provides crisis and support services for homeless and runaway youth in the United States."<br><span class="quote-source">-The National Runaway Safeline's website</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- ChildHelp National Child Abuse Hotline -->
+			<article class="resourceLink">
+				<h4><a href="https://childhelphotline.org/" target="_blank">ChildHelp National Child A<span class="bu">bu</span>se Hotline</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#chnc">+</button></h4>
+				<h6><b>Phone:</b> <a href="tel:18004224453">1 (800) 422-4453</a></h6>
+				<h6><b>Text:</b> <a href="sms:18004224453">1 (800) 442-4453</a></h6>
+
+				<div id="chnc" class="collapse">
+					<hr>
+					<p>Available 24/7 via phone, text, and online chat.</p>
+
+					<blockquote>"The Childhelp National Child A<span class="bu">bu</span>se Hotline is dedicated to the prevention of child a<span class="bu">bu</span>se. Serving the U.S. and Canada, the hotline is staffed 24 hours a day, 7 days a week with professional crisis counselors who—through interpreters—provide assistance in over 170 languages. The hotline offers crisis intervention, information, and referrals to thousands of emergency, social service, and support resources. All calls are confidential."<br><span class="quote-source">-The ChildHelp National Child A<span class="bu">bu</span>se Hotline's website</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- National Center for Missing and Exploited Children (NCMEC) -->
+			<article class="resourceLink">
+				<h4><a href="http://www.missingkids.com/gethelpnow/cybertipline" target="_blank">National Center for Missing and Exploited Children (NCMEC)</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#ncmec">+</button></h4>
+				<h6><b>Phone:</b> <a href="tel:18008435678">1 (800) 843-5678</a></h6>
+
+				<div id="ncmec" class="collapse">
+					<hr>
+					<p>Available at various hours via phone and tipline.</p>
+
+					<blockquote>"NCMEC serves as a clearinghouse and comprehensive reporting center for all issues related to the prevention of and recovery from child victimization."<br><span class="quote-source">-NCMEC's website</span></blockquote> 
+				</div>
+			</article><br>
+
+			<!-- National Human Trafficking Hotline -->
+			<article class="resourceLink">
+				<h4><a href="https://humantraffickinghotline.org/get-help" target="_blank">National Human Tr<span class="af">af</span>ficking Hotline</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#nhth">+</button></h4>
+				<h6><b>Phone:</b> <a href="tel:18883737888">1 (888) 373-7888</a></h6>
+				<h6><b>Text:</b> <a href="sms:233733">233733</a></h6>
+
+				<div id="nhth" class="collapse">
+					<hr>
+					<p>Available 24/7 via phone and text.</p>
+
+					<p>Offers help in more than 200 languages.</p>
+
+					<blockquote>"The National Human Tr<span class="af">af</span>ficking Hotline is a national anti-tr<span class="af">af</span>ficking hotline serving survivors of human tr<span class="af">af</span>ficking and the anti-tr<span class="af">af</span>ficking community in the United States. The toll-free hotline is available to answer calls from anywhere in the country, 24 hours a day, 7 days a week, every day of the year in more than 200 languages."<br><span class="quote-source">-The National Human Tr<span class="af">af</span>ficking Hotline's website</span></blockquote>
+				</div>
+			</article><br>
+		</section>
+		<!-- endregion -->
+
+		<!-- endregion -->
+
+
+
+		<!-- Learn About Mental Health -->
+		<!-- #region -->
+		<br><br>
+		<section id="learn">
+			<h2>Learn About Mental Health</h2>
+
+			<!-- Social Work License Map -->
+			<article class="resourceLink">
+				<h4><a href="https://socialworklicensemap.com/social-work-resources/mental-health-resources-list/" target="_blank">Social Work License Map</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#swlm">+</button></h4>
+				<h6>Like a linktree for United States mental health resources</h6>
+
+				<div id="swlm" class="collapse">
+					<hr>
+					<blockquote><p>"Mental health is an undeniably important matter, yet most people don’t have access to the resources they need when they need help. At Social Work License Map, we have compiled a comprehensive list of resources for anyone seeking information about and/or help for a range of mental health issues.</p>
+
+					<p>Our list spans diagnostic tools, research portals, government organizations, nonprofits, blogs, and phone hotlines devoted to addressing issues ranging from general mental illnesses and disorders such as autism, anxiety, depression, eating disorders, and substance a<span class="bu">bu</span>se, to the specific needs of diverse populations, including LGBTQ youth, minorities, women, and veterans. Take a look at these resources, and we hope you find our list helpful!"<br><span class="quote-source">-Social Work License Map's website</span></p></blockquote>
+				</div>
+			</article><br>
+
+			<!-- Rethink.org -->
+			<article class="resourceLink">
+				<h4><a href="https://www.rethink.org/advice-and-information/about-mental-illness/learn-more-about-conditions/" target="_blank">Rethink.org</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#ret">+</button></h4>
+				<h6>Plain-language explanations of mental health conditions</h6>
+
+				<div id="ret" class="collapse">
+					<hr>
+					<blockquote>"If you have a mental health condition, your doctor will give you a formal diagnosis. While most people experience mental health conditions in very different ways, most people will share some common symptoms and side-effects."<br><span class="quote-source">-Rethink.org</span></blockquote>
+
+					<blockquote>This isn't the most scientific source, but it does a good job of breaking down many of the most common mental health conditions into concise summaries that you don't need a medical degree to understand. It also has an extensive list of hotlines in the UK.<br><span class="quote-source">-The You Matter Team</span></blockquote>
+				</div>
+			</article><br>
+
+			<!-- MedlinePlus -->
+			<article class="resourceLink">
+				<h4><a href="https://medlineplus.gov/mentalhealth.html" target="_blank">MedlinePlus: U.S. National Library of Medicine</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#med">+</button></h4>
+				<h6>Comprehensive government source on all things mental health</h6>
+
+				<div id="med" class="collapse">
+					<hr>
+					<p>¡Hay mucho contenido en Español aquí!<br>(There's lots of content in Spanish here!)</p>
+
+					<blockquote><p>"Mental health includes our emotional, psychological, and social well-being. It affects how we think, feel, and act as we cope with life. It also helps determine how we handle stress, relate to others, and make choices. Mental health is important at every stage of life, from childhood and adolescence through adulthood and aging.</p>
+
+					<p>Mental disorders are serious conditions which can affect your thinking, mood, and behavior. They may be occasional or long-lasting. They can affect your ability to relate to others and function each day. Mental disorders are common; more than half of all Americans will be diagnosed with one at some time in their life. But there are treatments. People with mental disorders can get better, and many of them recover completely."<br><span class="quote-source">-MedlinePlus' website</span></p></blockquote>
+				</div>
+			</article><br>
+
+			<!-- 211.org -->
+			<article class="resourceLink">
+				<h4><a href="https://www.211.org/" target="_blank">211.org</a><button class="btn" data-bs-toggle="collapse" data-bs-target="#two">+</button></h4>
+				<h6>Don't know what to try? Calling <a href="tel:211">211</a> can help.</h6>
+
+				<div id="two" class="collapse">
+					<hr>
+					<p>This service is available in the United States and Canada.</p>
+
+					<blockquote>"211 connects you to expert, caring help. Every call is completely confidential."<br><span class="quote-source">-211.org</span></blockquote>
+
+					<blockquote>Dialing <a href="tel:211" class="contact">211</a> will connect you to a call center than can refer you to resources and organizations that offer help with addiction, disasters, emergency food and financial assistance, career counseling, therapy, s<span class="ui">ui</span>cide prevention, and more.<br><span class="quote-source">-The You Matter Team</span></blockquote>				
+				</div>
+			</article><br>
+		</section>
+		<!-- endregion -->
+
+
+
+		<!-- Find a Therapist -->
+		<!-- #region -->
+		<br><br>
+		<section id="therapist">
+			<h2>Find a Therapist</h2>
+
+			<div class="gallery">
+				<!-- Rise Above the Disorder (RAD) -->
+				<div class="resource">
+					<img src="images/RAD.png" alt="Rise Above the Disorder's logo.">
+					<div>
+						<h4><a href="https://www.youarerad.org/therapy" target="_blank">Rise Above the Disorder</a></h4>
+						<h6>For Everyone at <b>Low or No Cost</b></h6>
+						<p>"Rise Above the Disorder (RAD) began as a video game group dedicated to helping gamers. Today, it's a non-profit dedicated to removing the two greatest barriers to mental health care: access and affordability. To accomplish our mission, we provide a universal mental health care system to people around the world.</p>
+
+						<p>The journey towards mental wellness can be long and challenging. You may have found this page at your darkest hour, at the height of motivation, or with great dedication to someone else's wellbeing; regardless, the path to healing begins here."<br><span class="quote-source">-RAD's website</span></p>
+						<br><br>
+						<a href="https://www.youarerad.org/therapy" class="btn btn-outline-light" id="rad" target="_blank" >Visit!</a>
+					</div>
+				</div>
+
+				<!-- APA -->
+				<div class="resource">
+					<img src="images/APA.png" alt="The American Psychological Association's logo.">
+					<div>
+						<h4><a href="https://www.apa.org/topics/crisis-hotlines" target="_blank">American Psychological Association
+						</a></h4>
+						<h6>For Everyone in the United States</h6>
+						<p>"A consumer resource featuring information related to psychological issues affecting your daily physical and emotional well-being. Refer to our fact sheet series to learn how psychologists can help.</p>
+
+						<p>Need to talk to someone? Specialists are available for confidential telephone counseling, or find a psychologist near you for longer-term help."<br><span class="quote-source">-The APA's website</span></p>
+						<br><br>
+						<a href="https://www.apa.org/topics/crisis-hotlines" class="btn btn-outline-light" id="apa" target="_blank">Visit!</a>
+					</div>
+				</div>
+
+				<!-- Findatherapist.com -->
+				<div class="resource">
+					<img src="images/FindATherapist.png" alt="Find a therapist.com's logo">
+					<div>
+						<h4><a href="https://www.findatherapist.com/" target="_blank">Findatherapist.com</a></h4>
+						<h6>For Everyone in the United States</h6>
+						<p>"Find A Therapist connects you with licensed mental health professionals including psychologists, clinical social workers, marriage and family therapists, psychiatrists, and professional counselors.</p>
+
+						<p>We understand that admitting the need for help is the first step toward improving your life, but finding the right therapist can be difficult. We have made it easy to search for a local therapist and send them a secure confidential message. You can be assured your privacy is respected and protected while finding the help you deserve."<br><span class="quote-source">-Findatherapist.com</span></p>
+						<br><br>
+						<a href="https://www.findatherapist.com/" class="btn btn-outline-light" id="finda" target="_blank">Visit!</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- endregion -->
+
+
+
+		<!-- About Emma -->
+		<!-- #region -->
+		<br><br>
+		<section id="about">
+			<article>
+				<h2>About Emma</h2>
+				
+				<!-- Emma's Twitch Bio -->
+				<blockquote><span id="emmaTagline"><b>Your personal pianist, workout buddy, mediocre gamer, mental health advocate, and source of positive vibes</b> ❤︎</span><br><span class="quote-source">-Emma's self-written <a href="https://www.twitch.tv/emmameili" target="_blank">Twitch channel</a> bio</span></blockquote><br>
+
+				<!-- Three nested Bootstrap grids. These allow the different parts of this section to expand on large screens and stack on top of each other on smaller screens while using page space as efficiently as possible~ -->
+				<div class="container">
+					<div class="row">
+						
+						<!-- Picture of Emma -->
+						<div class="col-12 col-lg-5 col-xl-4 col-xxl-3">
+							<aside>
+								<img id="emma" src="images/emma.png" alt="Picture of Emma Mei-Li." data-bs-toggle="tooltip" title="Emma Mei-Li">
+							</aside><br>
+						</div>
+
+						<div class="col-12 col-lg-7 col-xl-8 col-xxl-9">						
+							<div class="container">
+								<div class="row">
+									
+									<!-- A couple of paragraphs about Emma -->
+									<div class="col-lg-12">
+										<p>Emma Mei-Li is a variety streamer who loves chatting, working out, advocating for mental health, playing the piano, and gaming! She founded the <a href="https://www.twitch.tv/team/usclive" target="_blank">SC Live</a> student organization at USC while she was studying there.</p>
+
+										<p>Since graduating, she's worked for <a href="https://youarerad.org/about" target="_blank">Rise Above the Disorder (RAD)</a> and continued to create content. She's best known for her <a href="https://www.twitch.tv/emmameili" target="_blank">Twitch streams</a> and wide variety of <a href="https://fanhouse.app/emmameili/feed">cosplays</a>. Her streams usually start at 8:00pm U.S. Pacific Time (<a href="https://www.timeanddate.com/time/zones/pt" target="_blank">see current U.S. Pacific Time here</a>) every Sunday, Monday, Wednesday, and Thursday.</p><br>
+									</div>
+
+									<!-- Links to Emma's social media -->
+									<div class="col-lg-12">	
+										<h4 style="margin-bottom: 15px;">Connect with Emma!</h4>
+										
+										<div class="container">
+											<div class="row">
+
+											  	<!-- Twitch -->
+											  	<div class="col-4 col-md-2 col-lg-4 col-xl-2"><a href="https://www.twitch.tv/emmameili"><img id="twitch-icon" alt="Twitch's logo." data-bs-toggle="tooltip" title="Emma's Twitch channel"></a></div>
+											  
+												<!-- Discord -->
+											  	<div class="col-4 col-md-2 col-lg-4 col-xl-2"><a href="https://discord.gg/fRxaC9m"><img id="discord-icon" alt="Discord's logo." data-bs-toggle="tooltip" title="Emma's Discord server"></a></div>
+											  
+												<!-- Instagram -->
+											  	<div class="col-4 col-md-2 col-lg-4 col-xl-2"><a href="https://www.instagram.com/emma.meili/"><img id="instagram-icon" alt="Instagram's logo." data-bs-toggle="tooltip" title="Emma's Instagram feed"></a></div>
+
+												<!-- Twitter -->
+											  	<div class="col-4 col-md-2 col-lg-4 col-xl-2"><a href="https://twitter.com/EmmaMeiLi"><img id="twitter-icon" alt="Twitter's logo." data-bs-toggle="tooltip" title="Emma's Twitter feed"></a></div>
+											  
+												<!-- Fanhouse -->
+											  	<div class="col-4 col-md-2 col-lg-4 col-xl-2"><a href="https://fanhouse.app/emmameili/feed"><img id="fanhouse-icon" alt="Fanhouse's logo." data-bs-toggle="tooltip" title="Emma's Fanhouse feed"></a></div>
+											  
+												<!-- YouTube -->
+											  	<div class="col-4 col-md-2 col-lg-4 col-xl-2"><a href="https://www.youtube.com/user/emmaplayspiano"><img id="youtube-icon" alt="YouTube's logo." data-bs-toggle="tooltip" title="Emma's YouTube channel"></a></div>
+											</div><br><br>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</article>
+		</section>
+		<!-- endregion -->
+
+
+
+		<!-- Footer (Copyright, site credits, & admin contact info) -->
+		<!-- #region -->
+		<br><br>
+		<footer><br>	
+			<p>© 2023 Emma Mei-Li & Cassie Shogun</p>
+			<p>This site is hosted for free by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+			<p>See information that's out of date? <a href="mailto:cassaleatory@gmail.com">Email us</a> with the details and we'll update it as soon as possible!</p><br>
+		</footer>	
+	</div>
+	<!-- endregion -->
+
+
+
+	<!-- JavaScript -->
+	<!-- #region -->
+	<script>
+
+		// ______________________________________________ //
+		// Dark Mode & Light Mode State Variables         //
+		// ______________________________________________ //
+		// #region Dark Mode & Light Mode State Variables
+
+		/* Whether or not the user's browser is set to prefer dark mode. */
+		const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)");
+		
+
+		/* The theme preference currently recorded in localStorage. */
+		const currentTheme = localStorage.getItem("theme");
+
+
+		/* Whether or not dark mode is currently active. */
+		let darkMode;
+
+		/* The starting value of darkMode depends on the user's browser's preference. Once that's determined, the correct theme is loaded by toggling the respective CSS script...*/
+		if (currentTheme == "dark") {
+			darkMode = true;
+		  	document.body.classList.toggle("dark-theme");
+		} else if (currentTheme == "light") {
+		  	darkMode = false;
+		  	document.body.classList.toggle("light-theme");
+		}
+
+		/* ...and then updating the icons and Bootstrap elements to match it. */
+		updateModeSocialsAndBS();
+
+		// #endregion
+
+
+
+		// ______________________________________________ //
+		// Censor State Variables 				          //
+		// ______________________________________________ //
+		// #region Censor State Variables 
+
+		/* Whether or not the censor is currently active. */
+		let censor = false;
+
+
+		/* Find all occurences of each word to be censored and encode them in constants.  */
+		const Ap = document.getElementsByClassName("ap");		/* Censors "rape"         */
+		const Bu = document.getElementsByClassName("bu");		/* Censors "abuse"        */
+		const Ui = document.getElementsByClassName('ui');		/* Censors "suicide"      */
+		const Ar = document.getElementsByClassName('ar');		/* Censors "harm"         */
+		const Io = document.getElementsByClassName('io');		/* Censors "violence"     */
+		const Sa = document.getElementsByClassName('sa');		/* Censors "assault"      */
+		const Af = document.getElementsByClassName('af');		/* Censors "trafficking"  */
+
+
+		/* Create a matrix (2D data structure) from the above lists of occurences of censor-worthy words. */
+		const censorTargets = new Array(Ap, Bu, Ui, Ar, Io, Sa, Af);
+
+		// #endregion
+
+
+
+		// ______________________________________________ //
+		// Bootstrap Tooltip State Variables			  //
+		// ______________________________________________ //
+		// #region Bootstrap Tooltip State Variables
+
+		/* Enable Bootstrap tooltips. */
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+		var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+  			return new bootstrap.Tooltip(tooltipTriggerEl)
+		});
+
+		// #endregion
+
+
+
+		// ______________________________________________ //
+		// Dark Mode & Light Mode Functions  			  //
+		// ______________________________________________ //
+		// #region Dark Mode & Light Mode Functions
+		
+		/* Toggle between dark mode and light mode. */
+		function modeToggle(){
+
+			/* Switch the boolean indicator to reflect the change in theme. All three switchers rely on this boolean to know what to load. */
+			darkMode = !darkMode;
+
+
+			/* Add a variable to store the theme (dark mode or light mode) that's being activated in this function. 
+
+			Unlike the similar boolean variable above, this variable stores the theme's name as a string (which will be used to save the new theme to localStorage). */
+			var theme;
+
+
+			/* Toggle a separate light mode stylesheet that recolors most elements on the site. */
+			if (prefersDarkMode.matches) {
+			    document.body.classList.toggle("light-theme");
+			    theme = document.body.classList.contains("light-theme")
+			      ? "light"
+			      : "dark";
+			}
+			/* Toggle a separate dark mode stylesheet that recolors most elements on the site. */
+			else {
+				document.body.classList.toggle("dark-theme");
+			    theme = document.body.classList.contains("dark-theme")
+			      ? "dark"
+			      : "light";
+			}
+		  	
+
+		  	/* Save the user's dark mode/light mode preference to local storage. */
+		  	localStorage.setItem("theme", theme);
+
+
+		  	/* Manually update the mode for the icons and Bootstrap elements, which aren't covered by the CSS stylesheets. */
+		  	updateModeSocialsAndBS();
+		  }
+
+
+		  /* Update the icons and Bootstrap elements to match the current dark/light mode. */
+		  function updateModeSocialsAndBS(){
+			
+			/* Switch the Bootstrap buttons between light and dark modes by adding a class that corresponds to the new theme and removing the class that corresponds to the old theme. Runs individually for each of the five buttons. */
+			if (darkMode){
+				document.getElementById("site-navbar").classList.remove("navbar-light");
+				document.getElementById("site-navbar").classList.add("navbar-dark");
+				
+				document.getElementById("site-navbar").classList.remove("bg-light");
+				document.getElementById("site-navbar").classList.add("bg-dark");
+
+				document.getElementById("censor").classList.remove("btn-light");
+				document.getElementById("censor").classList.add("btn-dark");
+
+				document.getElementById("rad").classList.remove("btn-outline-dark");
+				document.getElementById("rad").classList.add("btn-outline-light");
+
+				document.getElementById("apa").classList.remove("btn-outline-dark");
+				document.getElementById("apa").classList.add("btn-outline-light");		
+
+				document.getElementById("finda").classList.remove("btn-outline-dark");
+				document.getElementById("finda").classList.add("btn-outline-light");								
+			}
+			else{
+				document.getElementById("site-navbar").classList.remove("navbar-dark");
+				document.getElementById("site-navbar").classList.add("navbar-light");
+
+				document.getElementById("site-navbar").classList.remove("bg-dark");
+				document.getElementById("site-navbar").classList.add("bg-light");
+				
+				document.getElementById("censor").classList.remove("btn-dark");
+				document.getElementById("censor").classList.add("btn-light");
+
+				document.getElementById("rad").classList.remove("btn-outline-light");
+				document.getElementById("rad").classList.add("btn-outline-dark");
+
+				document.getElementById("apa").classList.remove("btn-outline-light");
+				document.getElementById("apa").classList.add("btn-outline-dark");		
+
+				document.getElementById("finda").classList.remove("btn-outline-light");
+				document.getElementById("finda").classList.add("btn-outline-dark");
+			}
+
+			/* Reload the icons in a color that corresponds to the new theme. */
+			loadIcons();
+		}
+		
+
+		/* Check if the site is currently on dark mode or light mode and display icons to match the active theme.*/
+		function loadIcons(){
+
+			if (darkMode){
+				document.getElementById("mode-icon").src = "images/modeToggle_dark.png";
+				document.getElementById("twitch-icon").src = "images/twitch_dark.png";
+				document.getElementById("discord-icon").src = "images/discord_dark.png";
+				document.getElementById("instagram-icon").src = "images/instagram_dark.png";
+				document.getElementById("twitter-icon").src = "images/twitter_dark.png";
+				document.getElementById("fanhouse-icon").src = "images/fanhouse_dark.png";
+				document.getElementById("youtube-icon").src = "images/youtube_dark.png";			    
+			}
+			else{
+				document.getElementById("mode-icon").src = "images/modeToggle_light.png";
+				document.getElementById("twitch-icon").src = "images/twitch_light.png";
+				document.getElementById("discord-icon").src = "images/discord_light.png";
+				document.getElementById("instagram-icon").src = "images/instagram_light.png";
+				document.getElementById("twitter-icon").src = "images/twitter_light.png";
+				document.getElementById("fanhouse-icon").src = "images/fanhouse_light.png";
+				document.getElementById("youtube-icon").src = "images/youtube_light.png";
+			}
+		}
+
+		// #endregion
+
+
+
+		// ______________________________________________ //
+		// Censor Functions      			  			  //
+		// ______________________________________________ //
+		// #region Censor Functions
+
+		/* Determine whether to apply the censor or remove it based on whether or not it's currently active. Then, invert the activity indicator to reflect the change. */
+		function checkCensor(){
+			
+			if(censor == false)
+				applyCensor();
+			else
+				removeCensor();
+
+			censor = !censor;
+		}
+
+
+		/* Go through the matrix of censor-worthy words and replace key letters with asterisks within each word. */
+		function applyCensor(){
+			
+			document.querySelector("#censor").innerHTML = "Remove terminology censor";
+
+			for(let i = 0; i < censorTargets.length; i++){
+
+				for(let j = 0; j < censorTargets[i].length; j++){
+					censorTargets[i][j].innerHTML = "**";
+				}
+			}
+		}
+
+
+		/* Go through the matrix of censor-worthy words and replace the asterisks within each word with the respective word's missing letters. */
+		function removeCensor(){
+			
+			document.querySelector("#censor").innerHTML = "Click here to censor potentially triggering terminology";
+
+			for(let i = 0; i < censorTargets.length; i++){
+				let activeClass = censorTargets[i][0].className;
+
+				for(let j = 0; j < censorTargets[i].length; j++){
+					censorTargets[i][j].innerHTML = activeClass;
+				}
+			}
+		}
+
+		// #endregion
+
+	</script>
+	<!-- endregion -->
+
 </body>
 
 </html>
