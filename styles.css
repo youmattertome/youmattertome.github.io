@@ -1,472 +1,619 @@
 /* ________________________________________________________________________ //
-// 																																				  //
-//	Custom CSS File for Emma's "You Matter" mental health resource website  //
-//																																				  //
+//                                                                          //
+//  Custom CSS File for Emma's "You Matter" mental health resource website  //
+//                                                                          //
 // ________________________________________________________________________ */
-
 
 /* #region Charset & Root Information */
 
 /* Defines the character set for this stylesheet. */
 @charset "UTF-8";
 
-/* Tells the browser that this site supports dark mode and light mode, two common color schemes. */
+/* Tells the browser that this site supports light mode and dark mode, two common color schemes. */
 :root {
   color-scheme: dark light;
 }
-
 /* #endregion */
 
 
+/* ____________________ //
+// Theme Colors         //
+// _____________________*/
+/* #region Theme Colors */
 
-/* ___________________________ //
-// Styles for basic HTML tags  //
-// ___________________________ */
-/* #region HTML Tag Styles 		 */
+body.dark-theme {
+  --bkg-img: url("images/background_dark.png");
 
-/* #region Dark Mode & Light Mode Styles */
-
-body {
-	--bkg-img: url("images/background_dark.png");
-
-	--text-color: whitesmoke;
+  --title-color: yellow;
+  --subtitle-color: lightyellow;
+  --text-color: whitesmoke;
+    
   --bkg-color: black;
   --sub-bkg-color: #3A3B3C;
-	--menu-color: #232323;
-	--block-border-color: darkgray;
+  --menu-color: #232323;
+  --block-border-color: darkgray;
 
-	--link-color: lightyellow;
-	--link-hover-color: #FFFF80;
-	--link-visit-color: #DCDC80;
+  --link-color: lightyellow;
+  --link-hover-color: #FFFF80;
 
-	--rsrc-color: skyblue;
-	--rsrc-hover-color: #3EB6E9;
-
-	--tagline-color: lightpink;
+  --resource-color: skyblue;
+  --resource-hover-color: #3EB6E9;
 }
 
 body.light-theme {
-	--bkg-img: url("images/background_light.png");
+  --bkg-img: url("images/background_light.png");
 
-	--text-color: #3A3B3C;
-	--bkg-color: whitesmoke;
-	--sub-bkg-color: #D4CDCD;
-	--menu-color: #E4E4E4;
-	--block-border-color: gray;
+  --title-color: pink;
+  --subtitle-color: lightpink;
+  --text-color: #3A3B3C;
+  
+  --bkg-color: whitesmoke;
+  --sub-bkg-color: #FEFEFE;
+  --menu-color: whitesmoke;
+  --block-border-color: gray;
 
-	--link-color: #7E42FF;
-	--link-hover-color: #BF1FF4;
-	--link-visit-color: #380A9B;
+  --link-color: purple;
+  --link-hover-color: #F38EE9;
 
-	--rsrc-color: #5E81FF;
-	--rsrc-hover-color: #729FFF;
-
-	--tagline-color: #5855AE;
+  --resource-color: #0FB2EB;
+  --resource-hover-color: #4AE6FD;
 }
-
-
-/* Alternate system for those whose browsers are set to prefer light mode.
-   It's just the inverse of the body code above it, really. */
-
-@media (prefers-color-scheme: light) {
-  body {
-    --bkg-img: url("images/background_light.png");
-
-		--text-color: #3A3B3C;
-		--bkg-color: whitesmoke;
-		--sub-bkg-color: #D4CDCD;
-		--menu-color: #E4E4E4;
-		--block-border-color: gray;
-
-		--link-color: #7E42FF;
-		--link-hover-color: #BF1FF4;
-		--link-visit-color: #380A9B;
-
-		--rsrc-color: #5E81FF;
-		--rsrc-hover-color: #729FFF;
-
-		--tagline-color: #5855AE;
-}
-  body.dark-theme {
-  	--bkg-img: url("images/background_dark.png");
-
-		--text-color: whitesmoke;
-  	--bkg-color: black;
-  	--sub-bkg-color: #3A3B3C;
-		--menu-color: #232323;
-		--block-border-color: darkgray;
-
-		--link-color: lightyellow;
-		--link-hover-color: #FFFF80;
-		--link-visit-color: #DCDC80;
-
-		--rsrc-color: skyblue;
-		--rsrc-hover-color: #3EB6E9;
-
-		--tagline-color: lightpink;
-  }
-}
+/* #endregion */
 
 /* #endregion */
 
 
-/* #region Subdivision Tag Styles */
+/* __________________ //
+// Typography         //
+// __________________ */
+/* #region Typography */
 
-body {
-	background-image: var(--bkg-img);
-	background-color: var(--bkg-color);
-	color: var(--text-color);
-	position: relative;
-}
-
-header,
-footer {
-	background-image: url("images/titleplate.png");
-}
-
-section {
-	width: 80%;
-	margin: auto;
-	background-color: var(--sub-bkg-color);
-	border: 2pt solid var(--text-color);
-	border-radius: 20px;
-	padding: 15px;
-	padding-left: 3%;
-	padding-right: 3%;
-}
-
-article {
-	width: 100%;
-	padding-top: 20px;
-}
-
-/* #endregion */
-
-
-/* #region Heading & Body Text Styles */
-
+/* #region Text */
 h1 {
-	font-family: 'Architects Daughter', cursive;
-	text-align: center;
-	text-shadow: 0 0 5px whitesmoke;
-	font-size: 100pt;
-	-webkit-text-fill-color: lightyellow;
-	-webkit-text-stroke-width: 1px;
-	-webkit-text-stroke-color: yellow;
+  font-family: 'Architects Daughter', cursive;
+  font-size: clamp(6rem, calc(1.54rem + 0.92vw), 5.2rem);
+  text-align: center;
+  text-shadow: 0 0 5px whitesmoke;
+  -webkit-text-fill-color: var(--subtitle-color);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: var(--title-color);
 }
 
 h2 {
-	font-family: 'Roboto Slab', serif;
-	padding-bottom: 10px;
-	padding-top: 10px;
-	border-bottom: 2pt solid var(--text-color);
-	border-top: 2pt solid var(--text-color);
-	margin-bottom: 30px;
+  --h2-font-size: clamp(1.73rem, calc(1.54rem + 0.92vw), 2.2rem);
+  font-family: 'Roboto Slab', serif;
+  font-size: var(--h2-font-size);
+  margin-bottom: 2rem;
+}
+
+h3 {
+  --h3-font-size: clamp(1.35rem, calc(1.28rem + 0.54vw), 1.62rem);
+  text-align: center;
+  text-shadow: 0 0 5px black;
+  color: var(--subtitle-color);
+}
+
+h4 {
+  --h4-font-size: clamp(1.2rem, calc(1.12rem + 0.4vw), 1.41rem);
+  font-size: var(--h4-font-size);
+  padding-right: 1rem;
+  
 }
 
 h5 {
-	text-align: center;
-	text-shadow: 0 0 5px black;
-	color: skyblue;
+  --h5-font-size: clamp(1.2rem, calc(1.05rem + 0.21vw), 1.09rem);
+  font-family: 'Roboto Slab', serif;
+  font-size: var(--h5-font-size);
+  text-decoration: underline;
 }
 
+h6 {
+  clear: left;
+}
+
+h3,
 h4,
-h5,
 h6,
 p,
 a {
-	font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+p {
+  --p-font-size: clamp(1rem, calc(0.95rem + 0.24vw), 1.13rem);
+  font-size: var(--p-font-size);
 }
 
 blockquote {
-	background-color: var(--menu-color);
-	font-family: 'Ubuntu', sans-serif;
-	padding: 8px;
-	border: 2pt solid var(--block-border-color);
-	border-radius: 8pt;
+  background-color: var(--menu-color);
+  font-family: 'Ubuntu', sans-serif;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 2pt solid var(--block-border-color);
+  border-radius: 8pt;
 }
 
-footer p {
-	color: black;
-	text-align: center;
-	margin: 25px;
+hr {
+  background-color: var(--text-color);
 }
-
 /* #endregion */
 
-
-/* #region Image Styles */
-
-aside img {
-	min-width: 220px;
-	width: 100%;
-	max-width: 300px;
-  max-height: 100%;
-  border: 2pt solid var(--text-color);
-	border-radius: 8px;
-}
-
-/* #endregion */
-
-
-/* #region Link Styles */
-
+/* #region Links */
 a {
-	color: var(--link-color);
-	text-decoration: underline;
-}
-
-footer a {
-	color: black;
-	text-decoration: underline;
-}
-
-h6 a {
-	color: var(--rsrc-color);
-	text-decoration: none;
-}
-
-h4 a,
-.resource a {
-	text-decoration: none;
-}
-
-.nav-item a {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1.5;
-  font-size: 14pt;
   color: var(--link-color);
   text-decoration: none;
 }
 
 a:hover {
-	color: var(--link-hover-color);
-	text-decoration: none;
+  color: var(--link-hover-color);
+  text-decoration: none;
 }
 
-a:visited {
-	color: var(--link-visit-color);
+h4 a,
+.resource a {
+  text-decoration: none;
 }
 
-h6 a:visited,
-.contact,
-.contact:visited {
-  color: var(--rsrc-color);
-	text-decoration: none;
+h6 a,
+.contact {
+  color: var(--resource-color);
+  text-decoration: none;
 }
 
 h6 a:hover,
 .contact:hover {
-	color: var(--rsrc-hover-color);
-	text-decoration: none;
+  color: var(--resource-hover-color);
 }
 
-footer a:hover {
-	color: yellow;
-	text-decoration: none;
-}
-
-.nav-item a:hover,
-.active {
-  font-size: 16pt !important;
-  color: var(--link-hover-color) !important;
-}
-
-.nav-item a:visited {
+nav a {
   display: inline-block;
   vertical-align: middle;
+  font-size: 1.25rem;
   line-height: 1.5;
-  font-size: 14pt;
-  color: var(--link-color);
   text-decoration: none;
 }
 
-/* #endregion */
-
-
-/* #region Line Styles */
-
-hr {
-	background-color: var(--text-color);
+nav a:hover,
+.active {
+  color: var(--link-hover-color) !important;
 }
 
+.dropdown-item a {
+  text-align:left important!;
+}
 /* #endregion */
 
 /* #endregion */
 
 
+/* ______________________ //
+// Page Structure         //
+// _______________________*/
+/* #region Page Structure */
 
-/* ______________________________________________________________ //
-// Styles for custom classes & their subcomponents					      //
-// ______________________________________________________________ */
-/* #region Custom Class Styles     																*/
+/* #region Sections */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-image: var(--bkg-img);
+  background-color: var(--bkg-color);
+  color: var(--text-color);
+  position: relative;
+  overscroll-behavior-y: none;
+  overscroll-behavior-x: none;
+}
+
+aside {
+  width: 90%;
+  padding: 1rem;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin: auto;
+  margin-bottom: 4rem;
+}
+
+section {
+  width: 90%;
+  background-color: var(--sub-bkg-color);
+  border: 2pt solid var(--text-color);
+  border-radius: 20px;
+  padding: 1rem;
+  padding-left: 3%;
+  padding-right: 3%;
+  margin: auto;
+  margin-bottom: 4rem;
+}
+
+article {
+  width: 100%;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+#introduction {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 0pt;
+  z-index: -2;
+}
+/* #endregion */
+
+/* #region Images */
+img {
+  max-width: 100%; /* Stops images from going outside containers */
+}
+
+#emma {
+  float: left;
+  max-width: 300px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border: 2pt solid var(--text-color);
+  border-radius: .5rem;
+}
+/* #endregion */
+
+/* #region Page Layout */
+.pagelayout {
+  overflow: hidden;
+  max-width: 72rem /* 1152px */;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem /* 16px */;
+  padding-right: 1rem /* 16px */;
+}
+
+@media (min-width: 640px) {
+  .pagelayout {
+    padding-left: 1.5rem /* 24px */;
+    padding-right: 1.5rem /* 24px */;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    padding-left: 2rem /* 32px */;
+    padding-right: 2rem /* 32px */;
+  }
+}
+/* #endregion */
+
+/* #endregion */
+
+
+/* _______________________ //
+// Linear Gradient         //
+// [Header & Footer]       //
+// _______________________ */
+/* #region Linear Gradient */
+
+header,
+footer {
+  overflow: hidden;
+  background: linear-gradient(270deg, #c79fc7, #96abcc, #b9a7cb);
+  background-size: 200% 200%;
+  -webkit-animation: gradborder 30s ease infinite;
+  -moz-animation: gradborder 30s ease infinite;
+  animation: gradborder 30s ease infinite;
+}
+
+footer {
+  left: 0;
+  width: 100%;
+  position: absolute;
+}
+
+footer p {
+  color: black;
+  text-align: center;
+  margin: 1.5rem;
+}
+
+footer a {
+  color: black;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: #56532a;
+  text-decoration: none;
+}
+
+.gradient-border {
+  --borderWidth: 2px;
+  background: transparent;
+  position: relative;
+  border-radius: var(--borderWidth);
+}
+
+.gradient-border:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: 20px;
+  background: linear-gradient(270deg, #c79fc7, #96abcc, #b9a7cb);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  -webkit-animation: gradborder 30s ease infinite;
+  -moz-animation: gradborder 30s ease infinite;
+  animation: gradborder 30s ease infinite;
+}
+
+@-webkit-keyframes gradborder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes gradborder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradborder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* #endregion */
+
+
+/* ___________________________ //
+// Custom Class Styles         //
+// ___________________________ */
+/* #region Custom Class Styles */
+
+/* #region Anchor */
+span.anchor {
+  margin-top: -114px;
+  display: block;
+  height: 114px;
+  position: relative;
+}
+/* #endregion */
+
+/* #region Resource Title & Subtitle */
+.title-subtitle {
+  display: table;
+}
+/* #endregion */
 
 /* #region Quote-Source */
-
 .quote-source {
-	font-size: 9pt;
-	padding-left: 30px;
+  font-size: var(--p-font-size);
+  font-style: italic;
+  padding-left: 2rem;
 }
-
 /* #endregion */
 
-
 /* #region Resource */
-
 .resource {
-	background-color: var(--sub-bkg-color);
-	color: var(--text-color);
-	font-family: 'Arvo', serif;
-	width: 380px;
-	height: auto;
-	border: 2pt solid var(--text-color);
-	border-radius: 8px;
-	margin: 0px 20px 20px 0px;
-	position: relative;
+  font-family: 'Arvo', serif;
+  background-color: var(--sub-bkg-color);
+  color: var(--text-color);
+  max-width: 50ch;
+  height: auto;
+
+  border: 2pt solid var(--text-color);
+  border-radius: .5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0rem;
+  margin-right: auto;
+  padding-bottom: 3rem;
+
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-grow: initial;
 }
 
 .resource h4 {
-	color: var(--link-color);
-	border-bottom: 2pt solid var(--text-color);
-	border-top: 2pt solid var(--text-color);
-	padding-left: 1%;
-	padding-bottom: 5px;
+  color: var(--link-color);
+  border-bottom: 2pt solid var(--text-color);
+  border-top: 2pt solid var(--text-color);
+  padding-bottom: 5px;
 }
 
 .resource h6,
 #emmaTagline {
-	color: var(--tagline-color);
+  color: var(--text-color);
+  font-weight: bold;
 }
 
 .resource div {
-	padding: 10px;
+  padding: 10px;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-direction: column;
 }
-
-.resource img {
-	width: 100%;
-	max-width: 380px;
-	height: auto;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
-}
-
 /* #endregion */
 
 /* #endregion */
 
 
+/* ___________________________ //
+// Bootstrap Overrides         //
+// ___________________________ */
+/* #region Bootstrap Overrides */
 
-/* ______________________________________________________________ //
-// Override styles for Bootstrap classes & their subcomponents    //
-// ______________________________________________________________ */
-/* #region Bootstrap Override Styles												      */
-
-/* #region Navbar & its Subcomponents */
-
+/* #region Navbar & Subcomponents */
 .navbar {
-	border-bottom: 2px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
 }
 
 .nav-item {
-	line-height: 70px;
+  line-height: 4rem;
 }
 
 .navbar-collapse {
-	padding-bottom: 20px;
+  padding-bottom: 20px;
 }
-
 /* #endregion */
 
-
 /* #region Grid Columns */
-
 .col-4 {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .col-4 img {
-	height: 50px;
-	width: 50px;
+  height: 50px;
+  width: 50px;
 }
 
 .col-4 img:hover {
-	height: 55px;
-	width: 55px;
+  height: 3rem;
+  width: 3rem;
 }
-
 /* #endregion */
-
 
 /* #region Gallery */
-
 .gallery {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-content: space-between;
-	padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  padding-bottom: 10px;
 }
 
+@media (min-width: 640px) {
+  .gallery {
+    gap: 1rem;
+  }
+}
 /* #endregion */
 
-
 /* #region Buttons */
-
-.btn-outline-light,
-.btn-outline-dark {
-	color: var(--link-color);
-	position: absolute;
-	bottom: 10px;
-  left: 10px;
-	font-size: 18px;
+.btn-block {
+  color: var(--link-color);
+  border: 1pt solid var(--block-border-color);
+  margin-bottom: 2rem;
 }
 
-.btn-dark,
-.btn-light {
-	color: var(--link-color);
-	border: 1pt solid var(--block-border-color);
+.btn-block:hover {
+  background-color: var(--sub-bkg-color);
+  color: var(--link-hover-color);
 }
 
 #censor {
-	margin-bottom: 20px;
+  color: var(--link-color);
+}
+
+#censor:hover {
+  color: var(--link-hover-color);
 }
 
 article .btn {
-	color: var(--link-color);
-	float: right;
-	font-size: 24pt;
-	padding: 0px;
-	margin-right: 4pt;
-	line-height: 20pt;
+  width: 2rem;
+  height: 2rem;
+  color: var(--link-color);
+  margin-right: .5rem;
+  padding: 0rem;
+  float: left;
 }
 
-article .btn:hover,
-.btn-dark:hover,
-.btn-light:hover {
-	color: var(--link-hover-color);
+article .btn p {
+  position: absolute;
+  font-size: 1.5rem;
+  top: -.55rem;
 }
 
+article .btn:hover {
+  color: var(--link-hover-color);
+}
+
+.btn-inverted {
+  left: -5rem;
+  transform: rotate(180deg);
+}
+
+.btn-inverted p {
+  transform: translateX(1rem);
+}
+
+.resource-btn {
+  color: var(--link-color);
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: var(--h5-font-size);
+}
 /* #endregion */
 
-
-/* #region Dropdowns & their Subcomponents */
-
+/* #region Dropdowns & Subcomponents */
 .dropdown-menu {
-	background-color: var(--menu-color);
-	border: 2pt solid var(--text-color);
+  background-color: var(--menu-color);
+  border: 2pt solid var(--text-color);
 }
 
 .dropdown-item {
-	color: var(--link-color);
+  color: var(--link-color);
 }
 
 .dropdown-item:hover,
 .dropdown-menu .active {
-	background-color: var(--sub-bkg-color);
-	color: var(--link-hover-color);
+  background-color: var(--sub-bkg-color);
+  color: var(--link-hover-color);
 }
+/* #endregion */
 
 /* #endregion */
 
+
+/* ____________________ //
+// Safari Fixes         //
+// ____________________ */
+/* #region Safari Fixes */
+
+/* Avoid overlapping the iOS Safari bottom bar */
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  bottom: env(safe-area-inset-bottom);
+}
+
+/* Avoid Safari clipping bottom bar */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* The hack for Safari */
+    height: -webkit-fill-available;
+  }
+}
 /* #endregion */
