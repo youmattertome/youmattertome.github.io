@@ -128,6 +128,7 @@ blockquote {
   background-color: var(--menu-color);
   font-family: 'Ubuntu', sans-serif;
   padding: 1rem;
+  padding-bottom: 0rem;
   margin-bottom: 1rem;
   border: 2pt solid var(--block-border-color);
   border-radius: 8pt;
@@ -168,6 +169,7 @@ h6 a:hover,
 nav a {
   display: inline-block;
   vertical-align: middle;
+  color: var(--link-color) !important;
   font-size: 1.25rem;
   line-height: 1.5;
   text-decoration: none;
@@ -413,11 +415,12 @@ span.anchor {
 }
 /* #endregion */
 
-/* #region Quote-Source */
+/* #region Quote Source */
 .quote-source {
   font-size: var(--p-font-size);
   font-style: italic;
   padding-left: 2rem;
+  display: table;
 }
 /* #endregion */
 
@@ -435,7 +438,7 @@ span.anchor {
   margin-bottom: 1rem;
   margin-left: 0rem;
   margin-right: auto;
-  padding-bottom: 3rem;
+  padding-bottom: rem;
 
   position: relative;
   overflow: hidden;
@@ -451,8 +454,7 @@ span.anchor {
   padding-bottom: 5px;
 }
 
-.resource h6,
-#emmaTagline {
+.resource h6 {
   color: var(--text-color);
   font-weight: bold;
 }
@@ -570,10 +572,9 @@ article .btn:hover {
 
 .resource-btn {
   color: var(--link-color);
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
   font-size: var(--h5-font-size);
+  vertical-align: bottom;
+  margin: .5rem;
 }
 /* #endregion */
 
